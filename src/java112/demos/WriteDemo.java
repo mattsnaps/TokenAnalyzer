@@ -20,12 +20,18 @@ public class WriteDemo {
             //PrintWriter writer = new PrintWriter(bufferedWriter);
 
             writer = new PrintWriter(new BufferedWriter(new FileWriter("output.txt")));
+            writer.println("A first line of file.");
+            writer.println("A Second line in file.");
         } catch (IOException iOException) {
             System.out.println("Problem writing file.");
             iOException.printStackTrace();
         } catch (Exception exception) {
             System.out.println("General Problem");
             exception.printStackTrace();
+        } finally {
+            if (writer != null) {
+                writer.close();
+            }
         }
     }
 }
