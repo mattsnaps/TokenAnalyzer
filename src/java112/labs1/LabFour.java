@@ -7,12 +7,12 @@ import java.io.*;
 
 public class LabFour {
     /**
-     *
+     * Test if there is one arg. Sends arg to run method.
      * @param args Command line arguments
      */
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.out.println("Plese enter one command line argument.");
+            System.out.println("Please enter one argument on the command line");
         } else {
             LabFour lab4 = new LabFour();
             lab4.run(args[0]);

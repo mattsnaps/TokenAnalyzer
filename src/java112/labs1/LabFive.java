@@ -7,28 +7,28 @@ import java.io.*;
 
 public class LabFive {
     /**
-     * Will pass arguments to the run method.
-     * @param args [description]
+     * Will pass arguments to the run method. test make sure 2 args
+     * @param args filename, message
      */
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Enter two command line arguments: ");
+            System.out.println("Please enter two arguments on the command line, a file name and a message");
         } else {
             LabFive lab5 = new LabFive();
             lab5.run(args[0], args[1]);
         }
     }
     /**
-     * open fo;es
-     * @param fileName [description]
-     * @param message  [description]
+     * Creates a new file and writes a message in it.
+     * @param fileName File name
+     * @param message  message in file
      */
     public void run (String fileName, String message) {
 
         PrintWriter writer = null;
 
         try {
-            writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName + ".txt")));
+            writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
             writer.println(message);
         } catch (IOException iOexception) {
             System.out.println("Problem Writing File");

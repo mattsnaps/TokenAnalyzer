@@ -6,22 +6,22 @@ import java.io.*;
  */
 public class LabSix {
     /**
-     * [main description]
-     * @param args [description]
+     * Tests makes sure two args. Passes them to run method.
+     * @param args Input filename and output file name.
      */
 
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Enter two command line arguments: ");
+            System.out.println("Please enter two arguments on the command line, an input file name and an output file name");
         } else {
             LabSix lab6 = new LabSix();
             lab6.run(args[0], args[1]);
         }
     }
     /**
-     * [run description]
-     * @param inputName  [description]
-     * @param outputName [description]
+     * Will open one file, read message write to a new second file..
+     * @param inputName  name of file to open and read
+     * @param outputName name of file to create and write to. 
      */
     public void run(String inputName, String outputName) {
         BufferedReader reader = null;
