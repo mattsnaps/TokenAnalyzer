@@ -9,13 +9,17 @@ import java.io.*;
 
 public class FileSummaryAnalyzer implements TokenAnalyzer {
 
-    private int totalTokenCount = 0;
+    private int totalTokenCount;
     /**
      * [getTotalTokenCount description]
      * @return [description]
      */
-    public int getTotalTokenCount() {
+    public int getTotalTokensCount() {
         return totalTokenCount;
+    }
+
+    public void instantiateVariable() {
+        totalTokenCount = 0;
     }
 
     /**

@@ -12,7 +12,7 @@ public class FileAnalysis {
     final static int VALID_ARGS = 1;
 
     private FileSummaryAnalyzer summaryAnalyzer;
-    private DistinctTokenAnalyzer distinctAnalyzer;
+    private DistinctTokensAnalyzer distinctAnalyzer;
 
     /**
      * [analyze description]
@@ -25,20 +25,20 @@ public class FileAnalysis {
         } else {
 
             instantiateVariable();
-            distinctAnalyzer.instantiateVariable();
+            summaryAnalyzer.instantiateVariable();
             openFile(arguments[0]);
-            int total = summaryAnalyzer.getTotalTokenCount();
+            int total = summaryAnalyzer.getTotalTokensCount();
             //System.out.println(total);
+
             for (String word : distinctAnalyzer.getDistinctTokens()) {
                 System.out.println(word);
             }
-
         }
     }
 
     public void instantiateVariable() {
         summaryAnalyzer = new FileSummaryAnalyzer();
-        distinctAnalyzer = new DistinctTokenAnalyzer();
+        distinctAnalyzer = new DistinctTokensAnalyzer();
     }
     public void openFile(String fileName) {
         try (BufferedReader input = new BufferedReader(new FileReader(fileName))) {
@@ -80,7 +80,7 @@ public class FileAnalysis {
             distinctAnalyzer.processToken(token);
         }
     }
-    public void writeOutputFiles() {
+    public void writeOutputFiles(String file) {
 
     }
 }

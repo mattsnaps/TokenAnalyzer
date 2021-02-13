@@ -7,16 +7,12 @@ import java.io.*;
  * @author mbpriebe
  */
 
-public class DistinctTokenAnalyzer implements TokenAnalyzer {
+public class DistinctTokensAnalyzer implements TokenAnalyzer {
     // Only allowed instance variable
-    private Set<String> distinctTokens;
+    private Set<String> distinctTokens = new TreeSet<String>();
 
     public Set<String> getDistinctTokens() {
         return distinctTokens;
-    }
-
-    public void instantiateVariable() {
-        distinctTokens = new TreeSet<String>();
     }
 
     /**
