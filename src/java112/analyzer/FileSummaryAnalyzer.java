@@ -8,13 +8,25 @@ import java.io.*;
  */
 
 public class FileSummaryAnalyzer implements TokenAnalyzer {
+
+    private int totalTokenCount = 0;
+    /**
+     * [getTotalTokenCount description]
+     * @return [description]
+     */
+    public int getTotalTokenCount() {
+        return totalTokenCount;
+    }
+
     /**
      * [processToken description]
      * @param token [description]
      */
     public void processToken(String token) {
-        
+        //System.out.println(token);
+        totalTokenCount++;
     }
+
     /**
      * [generateOutputFile description]
      * @param inputFilePath  [description]

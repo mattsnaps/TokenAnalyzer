@@ -9,33 +9,41 @@ import java.io.*;
 
 public class FileAnalysis {
     ///check coding standards
-    final int validArgs = 1;
+    final static int VALID_ARGS = 1;
+
     private FileSummaryAnalyzer summaryAnalyzer;
     private DistinctTokenAnalyzer distinctAnalyzer;
+
     /**
      * [analyze description]
      * @param arguments [description]
      */
     public void analyze(String[] arguments) {
-        if (arguments.length != validArgs) {
+        if (arguments.length != 1) {
             System.out.println("Please enter one argument on the command line");
+            return;
         } else {
-            instanceVariable();
+
+            instantiateVariable();
+            distinctAnalyzer.instantiateVariable();
             openFile(arguments[0]);
+            int total = summaryAnalyzer.getTotalTokenCount();
+            //System.out.println(total);
+            for (String word : distinctAnalyzer.getDistinctTokens()) {
+                System.out.println(word);
+            }
+
         }
     }
 
-    public void instanceVariable() {
+    public void instantiateVariable() {
         summaryAnalyzer = new FileSummaryAnalyzer();
         distinctAnalyzer = new DistinctTokenAnalyzer();
     }
     public void openFile(String fileName) {
         try (BufferedReader input = new BufferedReader(new FileReader(fileName))) {
-            while (input.ready()) {
-                String line = input.readLine();
-                loopFile(line);
-                setLoop(line);
-            }
+            readFileToList(input);
+
         } catch (FileNotFoundException fileNotFound) {
             System.out.println("File not Found...");
             fileNotFound.printStackTrace();
@@ -47,26 +55,30 @@ public class FileAnalysis {
             exception.printStackTrace();
         }
     }
-    public void loopFile(String line) {
-        List<String> myList = new ArrayList<String>();
-        String[] splitLine = line.split("\\w");
 
-        for (String token : splitLine) {
-            myList.add(token);
+    public void readFileToList(BufferedReader input) throws IOException {
+        String inputLine = null;
+        String[] tokenArray = null;
+        ArrayList<String> tokenArrayList = new ArrayList<String>();
+
+        while (input.ready()) {
+            inputLine = input.readLine();
+            System.out.println(inputLine);
+            tokenArray = inputLine.split("\\W");
+
+            for (String word : tokenArray) {
+                tokenArrayList.add(word);
+            }
         }
 
+        passToProcessToken(tokenArrayList);
     }
-    public void setLoop(String line) {
-        Set<String> setList = new TreeSet<String>();
-        String[] splitLine = line.split("\\w");
+    public void passToProcessToken(ArrayList<String> tokenArrayList) {
 
-        for (String token : splitLine) {
-            setList.add(token);
+        for (String token : tokenArrayList) {
+            summaryAnalyzer.processToken(token);
+            distinctAnalyzer.processToken(token);
         }
-
-    }
-    public void passToProcessToken() {
-
     }
     public void writeOutputFiles() {
 

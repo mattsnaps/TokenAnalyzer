@@ -8,12 +8,23 @@ import java.io.*;
  */
 
 public class DistinctTokenAnalyzer implements TokenAnalyzer {
+    // Only allowed instance variable
+    private Set<String> distinctTokens;
+
+    public Set<String> getDistinctTokens() {
+        return distinctTokens;
+    }
+
+    public void instantiateVariable() {
+        distinctTokens = new TreeSet<String>();
+    }
+
     /**
      * [processToken description]
      * @param token [description]
      */
     public void processToken(String token) {
-
+        distinctTokens.add(token);
     }
     /**
      * [generateOutputFile description]
