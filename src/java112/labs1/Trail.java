@@ -1,13 +1,15 @@
 package java112.labs1;
 
 /**
+ * Represents a trail which is general enough to be a hiking trail,
+ * mountain bike trail, or ski trail.
+ *
  * @author pawaite
  * @since 1.0
  * @version 1.0
  *
  * //TODO: 1. Where does the comment below end up? Where should it be?
- * Represents a trail which is general enough to be a hiking trail,
- * mountain bike trail, or ski trail.
+ *
  */
 public class Trail {
 

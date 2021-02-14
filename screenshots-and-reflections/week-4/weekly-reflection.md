@@ -1,25 +1,22 @@
 # Weekly Reflection
 
-#### What went well this week? 
+1. The comment doesn't end up in the description. Ends up in Version:
+	when you click on the Trail class.
+2. It cuts off the description at that point. Rest of the description
+	is if you click on it.
+3. It formats it using HTML.
+4. Version tag is the current version of the program.@Since describes how long
+	the program or class has been there.
+5. Throws should be used when you're throwing an exception back to a previous method.
 
-Replace this text with your response. 
+#### What went well this week?
 
-#### What didn't go so well this week? 
+Everything with the labs went pretty well this week.
 
-Replace this text with your response.  
+#### What didn't go so well this week?
 
-#### What additional resources did you use or what help did you receive to complete your work? 
+Lab 9 took a minute to debug. 
 
-Share your resources here. Example: "When completing Lab 2, I used this [stackoverflow article](https://stackoverflow.com/questions/28177370/how-to-format-localdate-to-string), to format the date.   
+#### What additional resources did you use or what help did you receive to complete your work?
 
-I also got stuck with a corrupt commit error message: 
-			
-			error: inflate: data stream error (incorrect header check)
-			error: corrupt loose object '5cdeb9c3a1fe164cb4d2779d1e0d9d9f4ef18c6a'
-			fatal: loose object 5cdeb9c3a1fe164cb4d2779d1e0d9d9f4ef18c6a (stored in .git/objects/5c/deb9c3a1fe164cb4d2779d1e0d9d9f4ef18c6a) 
-			
-Curtis, the IT Guide, helped me resolve it by using [this article](https://stackoverflow.com/questions/12571557/fixing-a-corrupt-loose-object-as-a-commit-in-git).
-
-If you didn't use any additional resources or receive any outside help, then indicate that as such. Example: "I did not use any outside resources on any parts of this submission - the work is entirely my own."
-
-Replace this text and the examples above with your own references. 
+Didn't use any resources outside of the lectures and website.
