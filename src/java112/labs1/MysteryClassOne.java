@@ -7,7 +7,7 @@ package java112.labs1;
 public class MysteryClassOne {
     /**run Myster Class Program.
     *Output results from mysterMethodOne
-    *@param arg command line arguments
+    *@param args command line arguments
     */
    public static void main(String[] args) {
        MysteryClassOne lab2 = new MysteryClassOne();

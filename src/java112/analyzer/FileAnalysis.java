@@ -56,7 +56,11 @@ public class FileAnalysis {
             exception.printStackTrace();
         }
     }
-
+    /**
+     * [readFileToList description]
+     * @param  input       [description]
+     * @throws IOException [description]
+     */
     public void readFileToList(BufferedReader input) throws IOException {
         String inputLine = null;
         String[] tokenArray = null;
