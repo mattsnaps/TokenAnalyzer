@@ -28,6 +28,16 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
      * @param outputFilePath [description]
      */
     public void generateOutputFile(String inputFilePath, String outputFilePath) {
-
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("output.txt")))) {
+            for (String word : distinctTokens) {
+                writer.println(word);
+            }
+        } catch (IOException iOException) {
+            System.out.println("Write Distinct File Error...");
+            iOException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Other Problem with Distint File...");
+            exception.printStackTrace();
+        }
     }
 }

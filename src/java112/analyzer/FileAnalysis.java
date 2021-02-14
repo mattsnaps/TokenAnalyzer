@@ -29,6 +29,7 @@ public class FileAnalysis {
             openFile(arguments[0]);
             int total = summaryAnalyzer.getTotalTokensCount();
             //System.out.println(total);
+            distinctAnalyzer.generateOutputFile("something", "something");
 
             for (String word : distinctAnalyzer.getDistinctTokens()) {
                 System.out.println(word);
