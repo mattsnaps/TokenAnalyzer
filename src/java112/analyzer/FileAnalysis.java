@@ -25,15 +25,12 @@ public class FileAnalysis {
         } else {
 
             instantiateVariable();
-            summaryAnalyzer.instantiateVariable();
-            openFile(arguments[0]);
-            int total = summaryAnalyzer.getTotalTokensCount();
-            //System.out.println(total);
-            distinctAnalyzer.generateOutputFile("something", "something");
 
-            for (String word : distinctAnalyzer.getDistinctTokens()) {
-                System.out.println(word);
-            }
+            openFile(arguments[0]);
+
+            File file = new File(arguments[0]);
+
+            writeOutputFiles(file.getAbsolutePath());
         }
     }
 
@@ -85,7 +82,10 @@ public class FileAnalysis {
             distinctAnalyzer.processToken(token);
         }
     }
-    public void writeOutputFiles(String file) {
+    public void writeOutputFiles(String inputPath) {
+        String outputPath = "output/";
 
+        distinctAnalyzer.generateOutputFile(inputPath, outputPath);
+        summaryAnalyzer.generateOutputFile(inputPath, outputPath);
     }
 }
