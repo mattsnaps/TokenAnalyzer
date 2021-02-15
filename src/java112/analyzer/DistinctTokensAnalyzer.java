@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- *
+ *Distinct token anlysis that determins what the distinct otkens are and prints them in a text file.
  * @author mbpriebe
  */
 
@@ -16,22 +16,20 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [processToken description]
-     * @param token [description]
+     * adds distinct tokens to distinct token TreeSet.
+     * @param token tokens (words) passed from reading the file.
      */
     public void processToken(String token) {
         distinctTokens.add(token);
     }
     /**
-     * [generateOutputFile description]
-     * @param inputFilePath  [description]
-     * @param outputFilePath [description]
+     * Generates the distinct token output file.
+     * @param inputFilePath  inputfile path
+     * @param outputFilePath outputfile path.
      */
     public void generateOutputFile(String inputFilePath, String outputFilePath) {
 
-        String outputName = "distinct_token.txt";
-
-        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath + outputName)))) {
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             for (String word : distinctTokens) {
                 writer.println(word);
             }

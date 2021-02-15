@@ -5,7 +5,7 @@ import java.net.URI;
 import java.text.SimpleDateFormat;
 
 /**
- *
+ *Summary analysis class that summarizes the file and output a summary report. 
  * @author mbpriebe
  */
 
@@ -13,15 +13,15 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
 
     private int totalTokenCount = 0;
     /**
-     * [getTotalTokenCount description]
-     * @return [description]
+     * getter method. returns total Tokens.
+     * @return total token coutn.
      */
     public int getTotalTokensCount() {
         return totalTokenCount;
     }
 
     /**
-     * [processToken description]
+     * Counts the total tokens (words) passed to it.
      * @param token [description]
      */
     public void processToken(String token) {
@@ -30,9 +30,10 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [generateOutputFile description]
-     * @param inputFilePath  [description]
-     * @param outputFilePath [description]
+     * Generates the summary outputfile.
+     *
+     * @param inputFilePath  input file path
+     * @param outputFilePath output file path.
      */
     public void generateOutputFile(String inputFilePath, String outputFilePath) {
         Date date = new Date();
@@ -45,12 +46,11 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
 
         String lastModified = dateFormat.format(file.lastModified());
         long fileSize = file.length();
-        String outputName = "summary.txt";
         String applicationName = "File Magic";
         String authorName = "Matthew Priebe";
         String authorEmail = "mbpriebe@madisoncollege.edu";
 
-        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath + outputName)))) {
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             writer.println("Application Name: " + applicationName);
             writer.println("Author Name: " + authorName);
             writer.println("Author Email: "+ authorEmail);

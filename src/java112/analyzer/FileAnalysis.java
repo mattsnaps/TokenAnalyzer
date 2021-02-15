@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- *
+ *Main control class for the File Analysis.
  * @author mbpriebe
  */
 
@@ -15,8 +15,11 @@ public class FileAnalysis {
     private DistinctTokensAnalyzer distinctAnalyzer;
 
     /**
-     * [analyze description]
-     * @param arguments [description]
+     * Main controller method that calls all other methods necessary to analyze and output reports.
+     * calls method to instantiate .
+     * send to openFile Method.
+     * determines the input and output file path and passes to writeOutputFiles methods.
+     * @param arguments name of file to be analyzed
      */
     public void analyze(String[] arguments) {
         if (arguments.length != 1) {
@@ -33,11 +36,18 @@ public class FileAnalysis {
             writeOutputFiles(file.getAbsolutePath());
         }
     }
-
+    /**
+     * Instantiates the summaryAnalyzer and distinctAnlayzer.
+     */
     public void instantiateVariable() {
         summaryAnalyzer = new FileSummaryAnalyzer();
         distinctAnalyzer = new DistinctTokensAnalyzer();
     }
+    /**
+     * Opens file and passes input to reader method.
+     * handles exceptions.
+     * @param fileName name of the file to me analyzed.
+     */
     public void openFile(String fileName) {
         try (BufferedReader input = new BufferedReader(new FileReader(fileName))) {
             readFileToList(input);
@@ -54,9 +64,10 @@ public class FileAnalysis {
         }
     }
     /**
-     * [readFileToList description]
-     * @param  input       [description]
-     * @throws IOException [description]
+     * Reads the file and prints the file contests to an ArrayList.
+     * Passes the ArrayList to passToProcessToken Method.
+     * @param  input  the file input.
+     * @throws IOException throws exception back to openFile method.
      */
     public void readFileToList(BufferedReader input) throws IOException {
         String inputLine = null;
@@ -65,6 +76,8 @@ public class FileAnalysis {
 
         while (input.ready()) {
             inputLine = input.readLine();
+            System.out.println(inputLine);
+            inputLine = inputLine.replaceAll("\\p{Punct}+", "");
             System.out.println(inputLine);
             tokenArray = inputLine.split("\\W");
 
@@ -75,6 +88,11 @@ public class FileAnalysis {
 
         passToProcessToken(tokenArrayList);
     }
+    /**
+     * Passes the Arraylist to the analyzer classes.
+     * specifically to the processToken method in AnalyzerClass.
+     * @param tokenArrayList [description]
+     */
     public void passToProcessToken(ArrayList<String> tokenArrayList) {
 
         for (String token : tokenArrayList) {
@@ -82,10 +100,17 @@ public class FileAnalysis {
             distinctAnalyzer.processToken(token);
         }
     }
+    /**
+     * Accepts the input and output file paths. Passes to Analyzerclasses generateOutputFile Methods.
+     * @param inputPath input File Path
+     * @param outputPath output File Class
+     */
     public void writeOutputFiles(String inputPath) {
-        String outputPath = "output/";
 
-        distinctAnalyzer.generateOutputFile(inputPath, outputPath);
-        summaryAnalyzer.generateOutputFile(inputPath, outputPath);
+        String distinctOutputPath = "output/distinct_tokens.txt";
+        String summaryOutputPath = "output/summary.txt";
+
+        distinctAnalyzer.generateOutputFile(inputPath, distinctOutputPath);
+        summaryAnalyzer.generateOutputFile(inputPath, summaryOutputPath);
     }
 }

@@ -17,3 +17,12 @@ https://stackoverflow.com/questions/17351043/how-to-get-absolute-path-to-file-in
 
 Finding URI
 http://www.avajava.com/tutorials/lessons/how-do-i-get-a-url-or-uri-to-a-file.html
+
+lastModified
+https://beginnersbook.com/2014/05/how-to-get-the-last-modified-date-of-a-file-in-java/
+
+Dates and formatting
+https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+
+Regex Help
+https://stackoverflow.com/a/37419929
