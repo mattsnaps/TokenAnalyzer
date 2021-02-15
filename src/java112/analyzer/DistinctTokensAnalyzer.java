@@ -22,6 +22,7 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     public void processToken(String token) {
         distinctTokens.add(token);
     }
+
     /**
      * Generates the distinct token output file.
      * @param inputFilePath  inputfile path
@@ -30,7 +31,7 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     public void generateOutputFile(String inputFilePath, String outputFilePath) {
 
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
-            writer.println(distinctTokens.size());
+            //writer.println(distinctTokens.size());
             for (String word : distinctTokens) {
                 writer.println(word);
             }

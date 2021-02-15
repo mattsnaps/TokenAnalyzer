@@ -5,13 +5,14 @@ import java.net.URI;
 import java.text.SimpleDateFormat;
 
 /**
- *Summary analysis class that summarizes the file and output a summary report. 
+ *Summary analysis class that summarizes the file and output a summary report.
  * @author mbpriebe
  */
 
 public class FileSummaryAnalyzer implements TokenAnalyzer {
 
     private int totalTokenCount = 0;
+
     /**
      * getter method. returns total Tokens.
      * @return total token coutn.

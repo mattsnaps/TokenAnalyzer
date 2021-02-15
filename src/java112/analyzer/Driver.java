@@ -6,9 +6,10 @@ package java112.analyzer;
  */
 
 public class Driver {
+
     /**
-     * [main description]
-     * @param args [description]
+     * main method for launching program.
+     * @param args filename
      */
     public static void main(String[] args) {
         FileAnalysis driver = new FileAnalysis();

@@ -26,16 +26,13 @@ public class FileAnalysis {
             System.out.println("Please enter one argument on the command line");
             return;
         } else {
-
             instantiateVariable();
-
             openFile(arguments[0]);
-
             File file = new File(arguments[0]);
-
             writeOutputFiles(file.getAbsolutePath());
         }
     }
+
     /**
      * Instantiates the summaryAnalyzer and distinctAnlayzer.
      */
@@ -43,6 +40,7 @@ public class FileAnalysis {
         summaryAnalyzer = new FileSummaryAnalyzer();
         distinctAnalyzer = new DistinctTokensAnalyzer();
     }
+
     /**
      * Opens file and passes input to reader method.
      * handles exceptions.
@@ -63,6 +61,7 @@ public class FileAnalysis {
             exception.printStackTrace();
         }
     }
+
     /**
      * Reads the file and prints the file contests to an ArrayList.
      * Passes the ArrayList to passToProcessToken Method.
@@ -87,6 +86,7 @@ public class FileAnalysis {
 
         passToProcessToken(tokenArrayList);
     }
+
     /**
      * Passes the Arraylist to the analyzer classes.
      * specifically to the processToken method in AnalyzerClass.
@@ -95,9 +95,9 @@ public class FileAnalysis {
     public void passToProcessToken(ArrayList<String> tokenArrayList) {
 
         for (String token : tokenArrayList) {
+            distinctAnalyzer.processToken(token);
             if (!(token.equals(""))) {
                 summaryAnalyzer.processToken(token);
-                distinctAnalyzer.processToken(token);
             }
         }
     }
