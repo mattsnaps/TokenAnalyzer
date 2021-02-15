@@ -30,6 +30,7 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     public void generateOutputFile(String inputFilePath, String outputFilePath) {
 
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
+            writer.println(distinctTokens.size());
             for (String word : distinctTokens) {
                 writer.println(word);
             }

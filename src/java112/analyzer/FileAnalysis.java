@@ -76,9 +76,8 @@ public class FileAnalysis {
 
         while (input.ready()) {
             inputLine = input.readLine();
-            System.out.println(inputLine);
-            inputLine = inputLine.replaceAll("\\p{Punct}+", "");
-            System.out.println(inputLine);
+            //System.out.println(inputLine);
+
             tokenArray = inputLine.split("\\W");
 
             for (String word : tokenArray) {
@@ -96,14 +95,15 @@ public class FileAnalysis {
     public void passToProcessToken(ArrayList<String> tokenArrayList) {
 
         for (String token : tokenArrayList) {
-            summaryAnalyzer.processToken(token);
-            distinctAnalyzer.processToken(token);
+            if (!(token.equals(""))) {
+                summaryAnalyzer.processToken(token);
+                distinctAnalyzer.processToken(token);
+            }
         }
     }
     /**
      * Accepts the input and output file paths. Passes to Analyzerclasses generateOutputFile Methods.
      * @param inputPath input File Path
-     * @param outputPath output File Class
      */
     public void writeOutputFiles(String inputPath) {
 

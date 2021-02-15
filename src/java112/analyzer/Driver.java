@@ -1,7 +1,7 @@
 package java112.analyzer;
 
 /**
- *
+ *Launcher main method class. Calls Analyze method in FileAnalysisClass
  * @author mbpriebe
  */
 
