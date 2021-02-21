@@ -68,35 +68,35 @@ public class FileAnalysis {
      * @param  input  the file input.
      * @throws IOException throws exception back to openFile method.
      */
-    public void readFileToList(BufferedReader input) throws IOException {
-        String inputLine = null;
-        String[] tokenArray = null;
-        ArrayList<String> tokenArrayList = new ArrayList<String>();
+     public void readFileToList(BufferedReader input) throws IOException {
+         String inputLine = null;
+         String[] tokenArray = null;
+         ArrayList<String> tokenArrayList = new ArrayList<String>();
 
-        while (input.ready()) {
-            inputLine = input.readLine();
-            //System.out.println(inputLine);
+         while (input.ready()) {
+             inputLine = input.readLine();
+             //System.out.println(inputLine);
 
-            tokenArray = inputLine.split("\\W");
+             tokenArray = inputLine.split("\\W");
 
-            for (String word : tokenArray) {
-                tokenArrayList.add(word);
-            }
-        }
+             for (String word : tokenArray) {
+                 tokenArrayList.add(word);
+             }
+         }
 
-        passToProcessToken(tokenArrayList);
-    }
+         passToProcessToken(tokenArrayList);
+     }
 
     /**
      * Passes the Arraylist to the analyzer classes.
      * specifically to the processToken method in AnalyzerClass.
      * @param tokenArrayList [description]
      */
-    public void passToProcessToken(ArrayList<String> tokenArrayList) {
+     public void passToProcessToken(ArrayList<String> tokenArray) {
 
-        for (String token : tokenArrayList) {
-            distinctAnalyzer.processToken(token);
+        for (String token : tokenArray) {
             if (!(token.equals(""))) {
+                distinctAnalyzer.processToken(token);
                 summaryAnalyzer.processToken(token);
             }
         }
