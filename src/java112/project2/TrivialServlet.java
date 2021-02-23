@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
  *@author    eknapp
  */
 @WebServlet(
-    name = "trivialServlet", 
+    name = "trivialServlet",
     urlPatterns = { "/trivial", "/simple" }
 )
 public class TrivialServlet extends HttpServlet {
@@ -32,7 +32,7 @@ public class TrivialServlet extends HttpServlet {
         out.print("<HTML>");
         out.print("<HEAD><TITLE>TrivialServlet Output</TITLE></HEAD>");
         out.print("<BODY>");
-        out.print("<h1>TrivialServlet Here!</h1>");
+        out.print("<h1>Is this Better!!!!!!?</h1>");
         System.out.println("Is this logging?");
         log("Is this logging?");
         out.print("</BODY>");
@@ -41,4 +41,3 @@ public class TrivialServlet extends HttpServlet {
     }
 
 }
-

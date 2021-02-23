@@ -10,7 +10,7 @@ import java.io.*;
 public class FileAnalysis {
     ///check coding standards
     final static int VALID_ARGS = 1;
-
+f
     private FileSummaryAnalyzer summaryAnalyzer;
     private DistinctTokensAnalyzer distinctAnalyzer;
 
@@ -80,11 +80,9 @@ public class FileAnalysis {
              tokenArray = inputLine.split("\\W");
 
              for (String word : tokenArray) {
-                 tokenArrayList.add(word);
+                 passToProcessToken(word);
              }
          }
-
-         passToProcessToken(tokenArrayList);
      }
 
     /**
@@ -92,14 +90,13 @@ public class FileAnalysis {
      * specifically to the processToken method in AnalyzerClass.
      * @param tokenArrayList [description]
      */
-     public void passToProcessToken(ArrayList<String> tokenArray) {
+     public void passToProcessToken(String token) {
 
-        for (String token : tokenArray) {
-            if (!(token.equals(""))) {
-                distinctAnalyzer.processToken(token);
-                summaryAnalyzer.processToken(token);
-            }
+        if (!(token.equals(""))) {
+            distinctAnalyzer.processToken(token);
+            summaryAnalyzer.processToken(token);
         }
+
     }
     /**
      * Accepts the input and output file paths. Passes to Analyzerclasses generateOutputFile Methods.
