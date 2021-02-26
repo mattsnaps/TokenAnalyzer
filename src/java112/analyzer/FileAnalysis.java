@@ -10,7 +10,7 @@ import java.io.*;
 public class FileAnalysis {
     ///check coding standards
     final static int VALID_ARGS = 1;
-f
+
     private FileSummaryAnalyzer summaryAnalyzer;
     private DistinctTokensAnalyzer distinctAnalyzer;
 
@@ -24,7 +24,7 @@ f
     public void analyze(String[] arguments) {
         if (arguments.length != 1) {
             System.out.println("Please enter one argument on the command line");
-            return;
+
         } else {
             instantiateVariable();
             openFile(arguments[0]);
@@ -71,7 +71,6 @@ f
      public void readFileToList(BufferedReader input) throws IOException {
          String inputLine = null;
          String[] tokenArray = null;
-         ArrayList<String> tokenArrayList = new ArrayList<String>();
 
          while (input.ready()) {
              inputLine = input.readLine();
