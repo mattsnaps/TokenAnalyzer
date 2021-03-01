@@ -2,9 +2,9 @@
 <html>
 <body>
 
-<h1>Welcome to my homepage</h1>
+<h1>Welcome to my (crappy) homepage</h1>
 
-<p>My first paragraph.</p>
+<p>This is my introduction.</p>
 
 </body>
 </html>
