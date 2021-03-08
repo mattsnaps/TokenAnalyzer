@@ -9,14 +9,18 @@ public class LabTwoFour {
     private Map<String, Integer> treeMap;
 
     /**
-     * [main description]
-     * @param args [description]
+     * main method. Calls the run method.
+     * @param args
      */
     public static void main(String[] args) {
         LabTwoFour run = new LabTwoFour();
         run.run();
     }
 
+    /**
+     * Run method. puts values into Map. Prints them out again.
+     * Does the Hashmap and Tree Map.
+     */
     public void run() {
         myMap = new HashMap<String, Integer>();
 
