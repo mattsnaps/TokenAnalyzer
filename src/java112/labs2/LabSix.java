@@ -18,8 +18,14 @@ public class LabSix implements PropertiesLoaderInterface {
      * @param args [description]
      */
     public static void main(String[] args) {
-        LabThree run = new LabThree();
-        run.run(args[0]);
+        LabSix run = new LabSix();
+
+        if (args.length != 1) {
+            System.out.println("Please enter one argument on the command line");
+        } else {
+            run.run(args[0]);
+        }
+
     }
 
 
@@ -42,7 +48,8 @@ public class LabSix implements PropertiesLoaderInterface {
      * @param arg Command Line Argument. Properties file path
      */
     public void run(String arg) {
-         loadProperties(arg);
+         this.properties = loadProperties(arg);
+
          System.out.println(properties.getProperty("name"));
          System.out.println(properties.getProperty("email.address"));
          System.out.println(properties.getProperty("car.type"));

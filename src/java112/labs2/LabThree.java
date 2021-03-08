@@ -14,11 +14,18 @@ public class LabThree {
 
     /**
      * calls the run method. Passes command line argument.
-     * @param args properties path file. 
+     * @param args properties path file.
      */
     public static void main(String[] args) {
         LabThree run = new LabThree();
-        run.run(args[0]);
+
+        if (args.length != 1) {
+            System.out.println("Please enter one argument on the command line");
+        } else {
+            run.run(args[0]);
+        }
+
+
     }
 
     /**
