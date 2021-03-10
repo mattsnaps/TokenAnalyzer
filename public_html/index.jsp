@@ -48,13 +48,10 @@ Released for free under a Creative Commons Attribution 2.5 License
                         </p>
                         <ol>
                             <li>
-                                <a href="#">Page One</a>
+                                <a href="/java112/firstServlet">First Servlet</a>
                             </li>
                             <li>
-                                <a href="#">Page Two</a>
-                            </li>
-                            <li>
-                                <a href="#">Page Three</a>
+                                <a href="/java112/propertiesServlet">Properties Servlet</a>
                             </li>
                         </ol>
                         <p>

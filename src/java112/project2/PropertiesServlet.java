@@ -33,10 +33,25 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
         response.setContentType("text/html");
         // set the response type before sending data
         PrintWriter  out  = response.getWriter();
+
         out.print("<HTML>");
-        out.print("<HEAD><TITLE>TrivialServlet Output</TITLE></HEAD>");
+        out.print("<HEAD><TITLE>Properties Servlet Output</TITLE></HEAD>");
         out.print("<BODY>");
         out.print("<h1>Properties Servlet</h1>");
+
+        out.println("<table>");
+
+        out.println("<tr>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("author") + "</td>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("email") + "</td>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("course.name") + "</td>");
+        out.println("</tr> <tr>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("course.meeting") + "</td>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("instructor.name") + "</td>");
+        out.println("<td style='border: 1px solid black; padding: 10px;'>" + properties.getProperty("description") + "</td>");
+        out.println("</tr>");
+        out.println("</table>");
+
         out.print("<br><br><a href=\"/java112\">home</a>");
         out.print("</BODY>");
         out.print("</HTML>");
@@ -46,7 +61,8 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
     public void init() throws ServletException {
         properties = new Properties();
 
-        loadProperties("project2.properties");
+        properties = loadProperties("/project2.properties");
+
     }
 
 }
