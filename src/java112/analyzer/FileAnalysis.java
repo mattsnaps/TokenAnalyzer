@@ -1,18 +1,18 @@
 package java112.analyzer;
 import java.util.*;
 import java.io.*;
+import java112.utilities.*;
 
 /**
  *Main control class for the File Analysis.
  * @author mbpriebe
  */
 
-public class FileAnalysis {
+public class FileAnalysis implements PropertiesLoader {
     ///check coding standards
-    final static int VALID_ARGS = 1;
+    final static int VALID_ARGS = 2;
 
-    private FileSummaryAnalyzer summaryAnalyzer;
-    private DistinctTokensAnalyzer distinctAnalyzer;
+    private List<TokenAnalyzer> analyzers;
 
     /**
      * Main controller method that calls all other methods necessary to analyze and output reports.
@@ -22,10 +22,17 @@ public class FileAnalysis {
      * @param arguments name of file to be analyzed
      */
     public void analyze(String[] arguments) {
-        if (arguments.length != 1) {
+        if (arguments.length != VALID_ARGS) {
             System.out.println("Please enter one argument on the command line");
 
         } else {
+
+            Properties properties = new Properties();
+            properties = loadProperties(arguments[1]);
+
+            //issue 1 - New Method?
+            analyzer.add(new FileSummaryAnalyzer(properties));
+
             instantiateVariable();
             openFile(arguments[0]);
             File file = new File(arguments[0]);
@@ -37,8 +44,8 @@ public class FileAnalysis {
      * Instantiates the summaryAnalyzer and distinctAnlayzer.
      */
     public void instantiateVariable() {
-        summaryAnalyzer = new FileSummaryAnalyzer();
-        distinctAnalyzer = new DistinctTokensAnalyzer();
+        analyzers = new List<TokenAnalyzer>();
+
     }
 
     /**

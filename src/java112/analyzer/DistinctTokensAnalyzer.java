@@ -28,7 +28,7 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
      * @param inputFilePath  inputfile path
      * @param outputFilePath outputfile path.
      */
-    public void generateOutputFile(String inputFilePath, String outputFilePath) {
+    public void generateOutputFile(String inputFilePath) {
 
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             //writer.println(distinctTokens.size());

@@ -9,7 +9,7 @@ import java112.utilities.*;
  * @author mbpriebe
  */
 
-public class LabSix implements PropertiesLoaderInterface {
+public class LabSix implements PropertiesLoader {
 
     private Properties properties;
 
