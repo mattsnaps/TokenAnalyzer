@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- *
+ *determines the tokens largest than  min and prints out in txt file.
  * @author mbpriebe
  */
 
@@ -47,7 +47,7 @@ public class LargestTokensAnalyzer implements TokenAnalyzer{
 
     /**
      * generates an output file for largest words file.
-     * @param inputFilePath path for input file. 
+     * @param inputFilePath path for input file.
      */
     public void generateOutputFile(String inputFilePath) {
         String outputFilePath = properties.getProperty("output.directory") +

@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- *
+ *Counts the distinct tokens. prints them out into a txt file.
  * @author mbpriebe
  */
 

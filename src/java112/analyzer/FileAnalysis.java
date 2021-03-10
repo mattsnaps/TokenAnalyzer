@@ -99,7 +99,7 @@ public class FileAnalysis implements PropertiesLoader {
     /**
      * Passes the Arraylist to the analyzer classes.
      * specifically to the processToken method in AnalyzerClass.
-     * @param tokenArrayList [description]
+     * @param token Word
      */
      public void passToProcessToken(String token) {
 

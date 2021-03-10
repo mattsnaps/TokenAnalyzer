@@ -47,7 +47,7 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     /**
      * Generates the distinct token output file.
      * @param inputFilePath  inputfile path
-     * @param outputFilePath outputfile path.
+     *
      */
     public void generateOutputFile(String inputFilePath) {
 

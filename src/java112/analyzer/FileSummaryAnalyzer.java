@@ -52,7 +52,7 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
      * Generates the summary outputfile.
      *
      * @param inputFilePath  input file path
-     * @param outputFilePath output file path.
+     * 
      */
     public void generateOutputFile(String inputFilePath) {
         Date date = new Date();
