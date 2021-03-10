@@ -32,6 +32,7 @@ public class FileAnalysis implements PropertiesLoader {
 
             //issue 1 - New Method?
             analyzer.add(new FileSummaryAnalyzer(properties));
+            analyzer.add(new DistinctTokensAnalyzer(properties));
 
             instantiateVariable();
             openFile(arguments[0]);

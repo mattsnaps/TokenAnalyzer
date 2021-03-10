@@ -12,6 +12,23 @@ import java.text.SimpleDateFormat;
 public class FileSummaryAnalyzer implements TokenAnalyzer {
 
     private int totalTokenCount = 0;
+    private Properties properties;
+
+    /**
+     * [FileSummaryAnalyzer description]
+     */
+    public FileSummaryAnalyzer() {
+
+    }
+
+    /**
+     * [FileSummaryAnalyzer description]
+     * @param properties [description]
+     */
+    public FileSummaryAnalyzer(Properties properties) {
+        this();
+        this.properties = properties;
+    }
 
     /**
      * getter method. returns total Tokens.
@@ -36,7 +53,7 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
      * @param inputFilePath  input file path
      * @param outputFilePath output file path.
      */
-    public void generateOutputFile(String inputFilePath, String outputFilePath) {
+    public void generateOutputFile(String inputFilePath) {
         Date date = new Date();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM d HH:mm:ss z Y");
@@ -44,12 +61,13 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
         File file = new File(inputFilePath);
         URI fileUri = file.toURI();
 
-
         String lastModified = dateFormat.format(file.lastModified());
         long fileSize = file.length();
-        String applicationName = "File Magic";
-        String authorName = "Matthew Priebe";
-        String authorEmail = "mbpriebe@madisoncollege.edu";
+
+        String applicationName = properties.getProperty("application.name");
+        String authorName = properties.getProperty("author");
+        String authorEmail = properties.getProperty("author.email.address");
+        String outputFilePath = properties.getProperty("output.directory");
 
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             writer.println("Application Name: " + applicationName);
