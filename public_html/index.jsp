@@ -18,38 +18,29 @@ Released for free under a Creative Commons Attribution 2.5 License
     <body>
         <div id="header">
             <h1>
-                <a href="#">Matthew's webpage</a>
+                <a href="#">Java112</a>
             </h1>
             <h2>
-                <a href="http://www.freecsstemplates.org/">by Free Css Templates</a>
+                <a href="http://www.freecsstemplates.org/">A Class at MATC</a>
             </h2>
         </div>
         <div id="content">
             <div id="posts">
                 <div class="post">
                     <h2 class="title">
-                        Welcome to Dusplic!
+                        Welcome to Matthew Priebe's WebPage
                     </h2>
                     <h3 class="posted">
-                        Posted on January 1th, 2007 by Author
+                        For Java112
                     </h3>
-                    <div class="story">
-                        <p>
-                            <em><strong>Dusplic</strong></em> is a free template from <a href="http://www.freecsstemplates.org/"><strong>Free CSS Templates</strong></a> released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>. The photos are from <a href="http://www.pdphoto.org/">PDPhoto.org</a>. You're free to use it for both commercial or personal use. I only ask that you link back to <a href="http://www.freecsstemplates.org/">my site</a> in some way. Enjoy :)
-                        </p>
-                    </div>
-                    <div class="meta">
-                        <p>
-                            Filed under <a href="#" class="category">Uncategorized</a> | <a href="#" class="comment">1 Comment »</a>
-                        </p>
-                    </div>
+
                 </div>
                 <div class="post">
                     <h2 class="title">
-                        Sample Tags
+                        Project 2 Links
                     </h2>
                     <h3 class="posted">
-                        Posted on January 1st, 2007 by Author
+                        Posted on March 10th, 2021 by Matthew Priebe
                     </h3>
                     <div class="story">
                         <p>
@@ -57,13 +48,13 @@ Released for free under a Creative Commons Attribution 2.5 License
                         </p>
                         <ol>
                             <li>
-                                <a href="#">Nullam et orci in erat viverra ornare.</a>
+                                <a href="#">Page One</a>
                             </li>
                             <li>
-                                <a href="#">Suspendisse quis gravida massa felis.</a>
+                                <a href="#">Page Two</a>
                             </li>
                             <li>
-                                <a href="#">Curabitur malesuada turpis nec ante.</a>
+                                <a href="#">Page Three</a>
                             </li>
                         </ol>
                         <p>
@@ -119,75 +110,7 @@ Released for free under a Creative Commons Attribution 2.5 License
                     </ul>
                 </div>
             </div>
-            <div id="categories" class="boxed">
-                <h2 class="heading">
-                    Categories
-                </h2>
-                <div class="content">
-                    <ul>
-                        <li>
-                            <a href="#">Quisque vestibulum</a>
-                        </li>
-                        <li>
-                            <a href="#">Sed a nisl a lacus</a>
-                        </li>
-                        <li>
-                            <a href="#">Quisque sagittis</a>
-                        </li>
-                        <li>
-                            <a href="#">Etiam volutpat</a>
-                        </li>
-                        <li>
-                            <a href="#">In aliquet hendrerit</a>
-                        </li>
-                        <li>
-                            <a href="#">Suspendisse iaculis</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="blogroll" class="boxed">
-                <h2 class="heading">
-                    Blogroll
-                </h2>
-                <div class="content">
-                    <ul>
-                        <li>
-                            <a href="#">AnotherFriendlySite.net</a>
-                        </li>
-                        <li>
-                            <a href="#">CoolSite.com</a>
-                        </li>
-                        <li>
-                            <a href="#">MyBestFriend.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="pages" class="boxed">
-                <h2 class="heading">
-                    Pages
-                </h2>
-                <div class="content">
-                    <ul>
-                        <li>
-                            <a href="#">My Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">My Photos</a>
-                        </li>
-                        <li>
-                            <a href="#">My Favorites</a>
-                        </li>
-                        <li>
-                            <a href="#">About Me</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact Me</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
             <div id="search" class="boxed">
                 <h2 class="heading">
                     Search

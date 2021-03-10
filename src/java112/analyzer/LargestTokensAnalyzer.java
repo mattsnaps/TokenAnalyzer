@@ -20,8 +20,8 @@ public class LargestTokensAnalyzer implements TokenAnalyzer{
 
     }
     /**
-     * [LargestTokenAnalyzer description]
-     * @param properties [description]
+     * Constructor class
+     * @param properties properties file passed in.
      */
     public LargestTokensAnalyzer(Properties properties) {
         this();
@@ -35,13 +35,9 @@ public class LargestTokensAnalyzer implements TokenAnalyzer{
     }
 
     /**
-     * [getLargestToken description]
-     * @return [description]
+     * Determines if token is above min. length. If is adds to list
+     * @param token word Token
      */
-    //public Set<String> getLargestToken() {
-    //    return largestTokens;
-    //}
-
     public void processToken(String token) {
 
         if (token.length() >= minimumTokenLength) {
@@ -49,6 +45,10 @@ public class LargestTokensAnalyzer implements TokenAnalyzer{
         }
     }
 
+    /**
+     * generates an output file for largest words file.
+     * @param inputFilePath path for input file. 
+     */
     public void generateOutputFile(String inputFilePath) {
         String outputFilePath = properties.getProperty("output.directory") +
                 properties.getProperty("output.file.largest.words");

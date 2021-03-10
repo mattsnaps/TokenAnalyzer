@@ -4,6 +4,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java112.utilities.*;
+import java.util.*;
 
 /**
  *  This is part of a lab and is the first servlet for the course.
@@ -11,10 +13,12 @@ import javax.servlet.annotation.*;
  *@author    eknapp
  */
 @WebServlet(
-    name = "trivialServlet",
-    urlPatterns = { "/trivial", "/simple" }
+    name = "PropertiesServlet",
+    urlPatterns = {"/propertiesServlet"}
 )
-public class TrivialServlet extends HttpServlet {
+public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
+
+    Properties properties;
 
     /**
      *  Handles HTTP GET requests.
@@ -32,12 +36,17 @@ public class TrivialServlet extends HttpServlet {
         out.print("<HTML>");
         out.print("<HEAD><TITLE>TrivialServlet Output</TITLE></HEAD>");
         out.print("<BODY>");
-        out.print("<h1>First Servlet</h1>");
-        out.print("<h2>Matthew Priebe - Java 112");
-        out.print("<img src='public_html/images/coding.png' alt='coding_image'");
+        out.print("<h1>Properties Servlet</h1>");
+        out.print("<br><br><a href=\"/java112\">home</a>");
         out.print("</BODY>");
         out.print("</HTML>");
         out.close();
+    }
+
+    public void init() throws ServletException {
+        properties = new Properties();
+
+        loadProperties("project2.properties");
     }
 
 }

@@ -16,15 +16,15 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
     private Properties properties;
 
     /**
-     * [FileSummaryAnalyzer description]
+     * Constructor class
      */
     public FileSummaryAnalyzer() {
 
     }
 
     /**
-     * [FileSummaryAnalyzer description]
-     * @param properties [description]
+     * Constructor class
+     * @param properties properties file passed in.
      */
     public FileSummaryAnalyzer(Properties properties) {
         this();

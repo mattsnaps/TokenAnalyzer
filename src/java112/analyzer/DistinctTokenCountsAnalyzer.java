@@ -13,15 +13,15 @@ public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
     private Map<String, Integer> distinctTokenCounts = new TreeMap<String, Integer>();
 
     /**
-     * [DistinctTokenCountAnalyzer description]
+     * Counstructor Class
      */
     public DistinctTokenCountsAnalyzer() {
 
     }
 
     /**
-     * [DistinctTokensAnalyzer description]
-     * @param properties [description]
+     * Constructor class
+     * @param properties properties file passed in.
      */
     public DistinctTokenCountsAnalyzer(Properties properties) {
         this();
@@ -29,13 +29,17 @@ public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
     }
 
     /**
-     * [getDistinctTokenCounts description]
-     * @return [description]
+     * getter for DistinctTokenCounts
+     * @return distinctTokenCounts
      */
     public Map <String, Integer> getDistinctTokenCounts() {
         return distinctTokenCounts;
     }
 
+    /**
+     * puts token into the map and counts how many distinct there are.
+     * @param token word token.
+     */
     public void processToken(String token) {
 
         if (!distinctTokenCounts.containsKey(token)) {
@@ -45,6 +49,10 @@ public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
         }
     }
 
+    /**
+     * generates the distinct counts output file.
+     * @param inputFilePath path of file being uploaded
+     */
     public void generateOutputFile(String inputFilePath) {
 
         String outputFilePath = properties.getProperty("output.directory") +

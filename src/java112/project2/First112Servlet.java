@@ -11,10 +11,10 @@ import javax.servlet.annotation.*;
  *@author    eknapp
  */
 @WebServlet(
-    name = "trivialServlet",
-    urlPatterns = { "/trivial", "/simple" }
+    name = "First112Servlet",
+    urlPatterns = {"/firstServlet"}
 )
-public class TrivialServlet extends HttpServlet {
+public class First112Servlet extends HttpServlet {
 
     /**
      *  Handles HTTP GET requests.
@@ -33,8 +33,9 @@ public class TrivialServlet extends HttpServlet {
         out.print("<HEAD><TITLE>TrivialServlet Output</TITLE></HEAD>");
         out.print("<BODY>");
         out.print("<h1>First Servlet</h1>");
-        out.print("<h2>Matthew Priebe - Java 112");
-        out.print("<img src='public_html/images/coding.png' alt='coding_image'");
+        out.print("<h2>Matthew Priebe - Java 112</h2>");
+        out.print("<img src='images/coding.png' alt='coding_image'");
+        out.print("<br><br><a href=\"/java112\">home</a>");
         out.print("</BODY>");
         out.print("</HTML>");
         out.close();
