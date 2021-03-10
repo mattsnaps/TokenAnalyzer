@@ -3,6 +3,7 @@ import java.util.*;
 import java.io.*;
 import java.net.URI;
 import java.text.SimpleDateFormat;
+import java112.utilities.*;
 
 /**
  *Summary analysis class that summarizes the file and output a summary report.
@@ -68,7 +69,7 @@ public class FileSummaryAnalyzer implements TokenAnalyzer {
         String authorName = properties.getProperty("author");
         String authorEmail = properties.getProperty("author.email.address");
         String outputFilePath = properties.getProperty("output.directory")
-                + properties.getProperty("summary.txt");
+                + properties.getProperty("output.file.summary");
 
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             writer.println("Application Name: " + applicationName);

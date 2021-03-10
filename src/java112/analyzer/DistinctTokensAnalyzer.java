@@ -1,6 +1,7 @@
 package java112.analyzer;
 import java.util.*;
 import java.io.*;
+import java112.utilities.*;
 
 /**
  *Distinct token anlysis that determins what the distinct otkens are and prints them in a text file.

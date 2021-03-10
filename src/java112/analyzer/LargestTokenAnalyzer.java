@@ -32,9 +32,9 @@ public class LargestTokenAnalyzer implements TokenAnalyzer{
      * [getLargestToken description]
      * @return [description]
      */
-    public Set<String> getLargestToken() {
-        return largestTokens;
-    }
+    //public Set<String> getLargestToken() {
+    //    return largestTokens;
+    //}
 
     public void processToken(String token) {
 

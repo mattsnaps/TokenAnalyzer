@@ -7,7 +7,7 @@ import java.io.*;
  * @author mbpriebe
  */
 
-public class DistinctTokenCountAnalyzer implements TokenAnalyzer{
+public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
 
     private Properties properties;
     private Map<String, Integer> distinctTokenCounts;
@@ -15,7 +15,7 @@ public class DistinctTokenCountAnalyzer implements TokenAnalyzer{
     /**
      * [DistinctTokenCountAnalyzer description]
      */
-    public DistinctTokenCountAnalyzer() {
+    public DistinctTokenCountsAnalyzer() {
 
     }
 
@@ -23,7 +23,7 @@ public class DistinctTokenCountAnalyzer implements TokenAnalyzer{
      * [DistinctTokensAnalyzer description]
      * @param properties [description]
      */
-    public DistinctTokensAnalyzer(Properties properties) {
+    public DistinctTokenCountsAnalyzer(Properties properties) {
         this();
         this.properties = properties;
     }

@@ -30,11 +30,11 @@ public class FileAnalysis implements PropertiesLoader {
             Properties properties = new Properties();
             properties = loadProperties(arguments[1]);
 
-            //issue 1 - New Method?
-            analyzer.add(new FileSummaryAnalyzer(properties));
-            analyzer.add(new DistinctTokensAnalyzer(properties));
-
             instantiateVariable();
+
+            //issue 1 - New Method?
+            analyzers.add(new FileSummaryAnalyzer(properties));
+            analyzers.add(new DistinctTokensAnalyzer(properties));
 
             openFile(arguments[0]);
 
@@ -48,8 +48,7 @@ public class FileAnalysis implements PropertiesLoader {
      * Instantiates the summaryAnalyzer and distinctAnlayzer.
      */
     public void instantiateVariable() {
-        analyzers = new List<TokenAnalyzer>();
-
+        analyzers = new ArrayList<TokenAnalyzer>();
     }
 
     /**
@@ -103,9 +102,10 @@ public class FileAnalysis implements PropertiesLoader {
      public void passToProcessToken(String token) {
 
         if (!(token.equals(""))) {
-            distinctAnalyzer.processToken(token);
-            summaryAnalyzer.processToken(token);
-        }
+            for (TokenAnalyzer item : analyzers) {
+                item.processToken(token);
+            }
+    }
 
     }
     /**
@@ -114,7 +114,13 @@ public class FileAnalysis implements PropertiesLoader {
      */
     public void writeOutputFiles(String inputPath) {
 
-        distinctAnalyzer.generateOutputFile(inputPath);
-        summaryAnalyzer.generateOutputFile(inputPath);
+        for (TokenAnalyzer item : analyzers) {
+
+            item.generateOutputFile(inputPath);
+        }
+
+
+        //distinctAnalyzer.generateOutputFile(inputPath);
+        //summaryAnalyzer.generateOutputFile(inputPath);
     }
 }
