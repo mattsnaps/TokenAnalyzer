@@ -50,6 +50,9 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
      */
     public void generateOutputFile(String inputFilePath) {
 
+        String outputFilePath = properties.getProperty("output.directory") +
+                properties.getProperty("output.file.distinct");
+
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             //writer.println(distinctTokens.size());
             for (String word : distinctTokens) {

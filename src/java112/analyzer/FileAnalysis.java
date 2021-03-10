@@ -35,8 +35,11 @@ public class FileAnalysis implements PropertiesLoader {
             analyzer.add(new DistinctTokensAnalyzer(properties));
 
             instantiateVariable();
+
             openFile(arguments[0]);
+
             File file = new File(arguments[0]);
+
             writeOutputFiles(file.getAbsolutePath());
         }
     }
@@ -111,10 +114,7 @@ public class FileAnalysis implements PropertiesLoader {
      */
     public void writeOutputFiles(String inputPath) {
 
-        String distinctOutputPath = "output/distinct_tokens.txt";
-        String summaryOutputPath = "output/summary.txt";
-
-        distinctAnalyzer.generateOutputFile(inputPath, distinctOutputPath);
-        summaryAnalyzer.generateOutputFile(inputPath, summaryOutputPath);
+        distinctAnalyzer.generateOutputFile(inputPath);
+        summaryAnalyzer.generateOutputFile(inputPath);
     }
 }
