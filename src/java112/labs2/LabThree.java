@@ -40,7 +40,7 @@ public class LabThree {
         System.out.println("Can't load the properties file");
         ioe.printStackTrace();
     } catch(Exception e) {
-        System.out.println("Problem: " + e);
+        System.out.println("Some other Problem: ");
         e.printStackTrace();
     }
 }

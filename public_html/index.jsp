@@ -35,6 +35,30 @@ Released for free under a Creative Commons Attribution 2.5 License
                     </h3>
 
                 </div>
+
+                <div class="post">
+                    <h2 class="title">
+                        Lab3.1 Link
+                    </h2>
+                    <div class="story">
+                        <ul>
+                            <li>
+                                <a href="/java112/myFirstJSP.jsp">My first JSP (lab3.1)</a>
+                            </li>
+
+                        </ul>
+                        <p>
+                            A blockquote:
+                        </p>
+                        <blockquote>
+                            <p>
+                                Don't Remove this blockquote
+                            </p>
+                        </blockquote>
+                    </div>
+
+
+
                 <div class="post">
                     <h2 class="title">
                         Project 2 Links
@@ -59,50 +83,37 @@ Released for free under a Creative Commons Attribution 2.5 License
                         </p>
                         <blockquote>
                             <p>
-                                “Et pulvinar pede ligula a sapien. Donec fermentum condimentum nisi. Proin iaculis mauris id lorem viverra molestie. Duis vel orci. Nam consequat. Morbi nec lacus.”
+                                Don't Remove this blockquote
                             </p>
                         </blockquote>
                     </div>
-                    <div class="meta">
-                        <p>
-                            Filed under <a href="#" class="category">Uncategorized</a> | <a href="#" class="comment">1 Comment »</a><br />
-                            <!--This theme is free for distriubtion,  so long as  link to openwebdesing.org and dubaiapartments.biz  stay on the theme--> Courtesy <a href="http://www.openwebdesign.org" target="_blank">Open Web Design</a><a href="http://www.dubaiapartments.biz" target="_blank"><img src="spacer.gif" width="5" height="5" border="0" /></a>Thanks to <a href="http://www.dubaiapartments.biz/" target="_blank">Dubai Hotels</a>
-                        </p>
+
                     </div>
                 </div>
             </div>
             <div id="archives" class="boxed">
                 <h2 class="heading">
-                    Archives
+                    Project 2 Links
                 </h2>
                 <div class="content">
                     <ul>
                         <li>
-                            <a href="#">February</a> (7)
+                            <a href="/java112/firstServlet">First Servlet</a>
                         </li>
                         <li>
-                            <a href="#">January 2007</a> (31)
+                            <a href="/java112/propertiesServlet">Properties Servlet</a>
                         </li>
+                    </ul>
+                </div>
+
+                <h2 class="heading">
+                    Lab 3 Links
+                </h2>
+
+                <div class="content">
+                    <ul>
                         <li>
-                            <a href="#">December 2006</a> (31)
-                        </li>
-                        <li>
-                            <a href="#">November 2006</a> (30)
-                        </li>
-                        <li>
-                            <a href="#">October 2006</a> (31)
-                        </li>
-                        <li>
-                            <a href="#">September 2006</a> (30)
-                        </li>
-                        <li>
-                            <a href="#">August 2006</a> (31)
-                        </li>
-                        <li>
-                            <a href="#">July 2006</a> (31)
-                        </li>
-                        <li>
-                            <a href="#">June 2006</a> (30)
+                            <a href="/java112/myFirstJSP.jsp">My First JSP</a>
                         </li>
                     </ul>
                 </div>

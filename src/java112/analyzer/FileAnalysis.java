@@ -32,7 +32,6 @@ public class FileAnalysis implements PropertiesLoader {
 
             instantiateVariable();
 
-            //issue 1 - New Method?
             analyzers.add(new FileSummaryAnalyzer(properties));
             analyzers.add(new DistinctTokensAnalyzer(properties));
             analyzers.add(new LargestTokensAnalyzer(properties));
@@ -120,9 +119,5 @@ public class FileAnalysis implements PropertiesLoader {
 
             item.generateOutputFile(inputPath);
         }
-
-
-        //distinctAnalyzer.generateOutputFile(inputPath);
-        //summaryAnalyzer.generateOutputFile(inputPath);
     }
 }

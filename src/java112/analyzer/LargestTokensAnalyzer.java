@@ -10,14 +10,14 @@ import java.io.*;
 public class LargestTokensAnalyzer implements TokenAnalyzer{
 
     private Properties properties;
-    private Set<String> largestToken = new TreeSet<String>();
+    private Set<String> largestToken;
     private int minimumTokenLength;
 
     /**
-     * [LargestTokenAnalyzer description]
+     * Constructor class for larges Tokens Analyzer
      */
     public LargestTokensAnalyzer() {
-
+        largestToken = new TreeSet<String>();
     }
     /**
      * Constructor class
@@ -29,7 +29,10 @@ public class LargestTokensAnalyzer implements TokenAnalyzer{
         minimumTokenLength = Integer.parseInt(properties.getProperty("largest.words.minimum.length"));
 
     }
-
+    /**
+     * getter for largest Tokens
+     * @return largest Tokens (words)
+     */
     public Set<String> getLargestTokens() {
         return largestToken;
     }

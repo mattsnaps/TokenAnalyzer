@@ -10,13 +10,13 @@ import java.io.*;
 public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
 
     private Properties properties;
-    private Map<String, Integer> distinctTokenCounts = new TreeMap<String, Integer>();
+    private Map<String, Integer> distinctTokenCounts;
 
     /**
      * Counstructor Class
      */
     public DistinctTokenCountsAnalyzer() {
-
+        distinctTokenCounts = new TreeMap<String, Integer>();
     }
 
     /**
@@ -41,6 +41,8 @@ public class DistinctTokenCountsAnalyzer implements TokenAnalyzer{
      * @param token word token.
      */
     public void processToken(String token) {
+
+        //maybe reverse logic here.
 
         if (!distinctTokenCounts.containsKey(token)) {
             distinctTokenCounts.put(token, 1);

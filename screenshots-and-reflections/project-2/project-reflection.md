@@ -2,7 +2,7 @@
 
 #### What were your AHA!! moments while completing this project?
 
-Replace this text with your thoughts.
+I think I got my new analyzers up and running much faster this time. 
 
 #### What additional resources did you use or what help did you receive to complete your work?
 

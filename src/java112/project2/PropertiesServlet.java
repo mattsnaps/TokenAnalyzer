@@ -57,7 +57,10 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
         out.print("</HTML>");
         out.close();
     }
-
+    /**
+     * initial startup method
+     * @throws ServletException
+     */
     public void init() throws ServletException {
         properties = new Properties();
 
