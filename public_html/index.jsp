@@ -38,12 +38,19 @@ Released for free under a Creative Commons Attribution 2.5 License
 
                 <div class="post">
                     <h2 class="title">
-                        Lab3.1 Link
-                    </h2>
+                        Unit 3 Lab Links                    </h2>
                     <div class="story">
                         <ul>
                             <li>
                                 <a href="/java112/myFirstJSP.jsp">My first JSP (lab3.1)</a>
+                            </li>
+
+                            <li>
+                                <a href="/java112/lab32servlet">lab3.2</a>
+                            </li>
+
+                            <li>
+                                <a href="/java112/lab33servlet">lab3.3</a>
                             </li>
 
                         </ul>
@@ -114,6 +121,14 @@ Released for free under a Creative Commons Attribution 2.5 License
                     <ul>
                         <li>
                             <a href="/java112/myFirstJSP.jsp">My First JSP</a>
+                        </li>
+
+                        <li>
+                            <a href="/java112/lab32servlet">lab3.2</a>
+                        </li>
+
+                        <li>
+                            <a href="/java112/lab33servlet">lab3.3</a>
                         </li>
                     </ul>
                 </div>
