@@ -14,10 +14,10 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     private Properties properties;
 
     /**
-     * [Constructor class
+     * Constructor class. called when object instantiated.
      */
     public DistinctTokensAnalyzer() {
-        
+
     }
     /**
      * Constructor class
@@ -29,8 +29,8 @@ public class DistinctTokensAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [getDistinctTokens description]
-     * @return [description]
+     * get ths distinct tokens.
+     * @return distinct tokens.
      */
     public Set<String> getDistinctTokens() {
         return distinctTokens;
