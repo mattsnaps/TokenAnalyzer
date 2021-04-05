@@ -143,16 +143,13 @@ a:hover {
 
 /* Footer */
 
-#footer {
-	clear: both;
+footer {
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#footer p {
-	padding-top: 20px;
-	text-align: right;
-	font-size: .7em;
-}
-
-#footer a {
-	color: #8A8E99;
+footer p {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
