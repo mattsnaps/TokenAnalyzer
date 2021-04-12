@@ -80,7 +80,7 @@ public class FillOrder {
         if (orderId == 100) {
 
             details.setType("Delivery");
-            details.setStatus("We Received your order and it's beening prepared.");
+            details.setStatus("We Received your order and we're getting ready to cook.");
             details.setGif("received.gif");
             details.setTime(date);
 
@@ -96,7 +96,7 @@ public class FillOrder {
 
         } else if (orderId == 300) {
             details.setType("Delivery");
-            details.setStatus("Our delivery driver is on their way at max speed.");
+            details.setStatus("Our delivery driver is on the way at max speed.");
             details.setGif("driving.gif");
             details.setTime(date);
 
