@@ -1,6 +1,7 @@
 package java112.project3;
 import java.time.*;
 import java.time.LocalDate;
+import java.util.*;
 
 /**
  * @author mbpriebe
@@ -12,33 +13,61 @@ public class FillOrder {
      */
     public Pizza makePizza(int orderId) {
 
-        Pizza pizza = new Pizza();
 
         if (orderId == 100) {
-            pizza.setPizzaSize("Large");
-            pizza.setPizzaTopping("Pepperoni");
 
-            return pizza;
+            Pizza pizza1 = new Pizza();
+
+            pizza1.setPizzaSize("Large");
+            pizza1.setPizzaTopping("Pepperoni");
+
+
+            return pizza1;
 
         } else if (orderId == 200) {
-            pizza.setPizzaSize("Medium");
-            pizza.setPizzaTopping("Sausage");
 
-            return pizza;
+            Pizza pizza1 = new Pizza();
+
+            pizza1.setPizzaSize("Large");
+            pizza1.setPizzaTopping("Sausage");
+
+            return pizza1;
 
         } else if (orderId == 300) {
-            pizza.setPizzaSize("Extra Large");
-            pizza.setPizzaTopping("Hawaiian");
 
-            return pizza;
+            Pizza pizza1 = new Pizza();
+            Pizza pizza2 = new Pizza();
+            Pizza pizza3 = new Pizza();
+
+            pizza1.setPizzaSize("Large");
+            pizza1.setPizzaTopping("Pepperoni");
+
+            pizza2.setPizzaSize("Large");
+            pizza2.setPizzaTopping("Pepperoni");
+
+            pizza1.setPizzaSize("Large");
+            pizza1.setPizzaTopping("BBQ");
+
+            return pizza1;
 
         } else if (orderId == 400) {
-            pizza.setPizzaSize("Small");
-            pizza.setPizzaTopping("Cheese");
 
-            return pizza;
+            Pizza pizza1 = new Pizza();
+            Pizza pizza2 = new Pizza();
+
+            pizza1.setPizzaSize("Medium");
+            pizza1.setPizzaTopping("Pepperoni");
+
+            pizza2.setPizzaSize("Medium");
+            pizza2.setPizzaTopping("Hawaiian");
+
+            return pizza1;
+
         } else {
-            return pizza;
+
+            Pizza pizza1 = new Pizza();
+
+            return pizza1;
         }
     }
 
@@ -49,29 +78,34 @@ public class FillOrder {
 
 
         if (orderId == 100) {
+
             details.setType("Delivery");
-            details.setStatus("Received");
+            details.setStatus("We Received your order and it's beening prepared.");
+            details.setGif("received.gif");
             details.setTime(date);
 
             return details;
 
         } else if (orderId == 200) {
             details.setType("Delivery");
-            details.setStatus("Cooking");
+            details.setStatus("Your Pizza is in the oven being cooked!");
+            details.setGif("cooking.gif");
             details.setTime(date);
 
             return details;
 
         } else if (orderId == 300) {
             details.setType("Delivery");
-            details.setStatus("Delivering");
+            details.setStatus("Our delivery driver is on their way at max speed.");
+            details.setGif("driving.gif");
             details.setTime(date);
 
             return details;
 
         } else if (orderId == 400) {
             details.setType("Delivery");
-            details.setStatus("Arrived");
+            details.setStatus("Your Pizza has arrived!");
+            details.setGif("arrived.gif");
             details.setTime(date);
 
             return details;
@@ -79,6 +113,7 @@ public class FillOrder {
         } else {
             details.setType("None");
             details.setStatus("Never");
+            details.setGif("None");
             details.setTime(date);
 
             return details;

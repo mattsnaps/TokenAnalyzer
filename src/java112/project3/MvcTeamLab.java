@@ -1,6 +1,7 @@
 package java112.project3;
 
 import java.io.*;
+import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -26,16 +27,22 @@ public class MvcTeamLab extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        int orderId;
+
+        orderId = Integer.parseInt(request.getParameter("id"));
 
         FillOrder pizzaOrder = new FillOrder();
         Pizza pizza;
         Order order;
 
-        pizza = pizzaOrder.makePizza(100);
-        order = pizzaOrder.orderDetail(100);
+        pizza = pizzaOrder.makePizza(orderId);
+        order = pizzaOrder.orderDetail(orderId);
 
         request.setAttribute("jim", order);
-        request.setAttribute("pizzaDetails", pizza);
+
+        request.setAttribute("bill", pizza);
+
+        request.setAttribute("id", orderId);
 
 
         String url = "/orderStatus.jsp";

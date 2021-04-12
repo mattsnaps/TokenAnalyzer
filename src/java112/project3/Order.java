@@ -9,6 +9,7 @@ public class Order {
 
     private String type;
     private String status;
+    private String gif;
     private LocalDateTime time;
 
     public Order() {
@@ -62,5 +63,21 @@ public class Order {
 	*/
 	public void setTime(LocalDateTime time) {
 		this.time = time;
+	}
+
+    /**
+	* Returns value of status
+	* @return
+	*/
+	public String getGif() {
+		return gif;
+	}
+
+	/**
+	* Sets new value of status
+	* @param
+	*/
+	public void setGif(String gif) {
+		this.gif = gif;
 	}
 }
