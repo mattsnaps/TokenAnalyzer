@@ -67,13 +67,15 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
         String inputLine = null;
 
         while (input.ready()) {
-            inputLine = input.readLine();
+            inputLine = input.readLine().trim();
 
             List<Integer> list = new ArrayList<Integer>();
 
             if (inputLine.equals("")){
 
-            } else foundLocations.put(inputLine, list);
+            } else {
+                foundLocations.put(inputLine, list);
+            }
         }
     }
 
@@ -81,15 +83,14 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
      * [processToken description]
      * @param token [description]
      */
-    public void processToken(String token) {
-
-
-        for (Map.Entry<String, List<Integer>> entry : foundLocations.entrySet()) {
-            if (token.equals(entry.getKey())) {
+     public void processToken(String token) {
+         for (Map.Entry<String, List<Integer>> entry : foundLocations.entrySet()) {
+             if (token.equals(entry.getKey())) {
 
                 entry.getValue().add(currentTokenLocation);
             }
         }
+
         currentTokenLocation++;
     }
 
@@ -106,10 +107,10 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
             //writer.println(distinctTokens.size());
             for (Map.Entry<String, List<Integer>> entry : foundLocations.entrySet()) {
                 String key = entry.getKey() + " =";
-                List value = entry.getValue();
+                List<Integer> list = entry.getValue();
 
                 writer.println(key);
-                writer.println(value);
+                writer.println(list);
             }
         } catch (IOException iOException) {
             System.out.println("Write Largest Token File Error...");
