@@ -14,6 +14,20 @@
     </div>
 
     <h2 class="heading">
+        Project 3 Links
+    </h2>
+    <div class="content">
+        <ul>
+            <li>
+                <a href="/java112/">HTTP Request Data Servlet</a>
+            </li>
+            <li>
+                <a href="/java112/">Project Properties Servlet</a>
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="heading">
         Lab 3 Links
     </h2>
 
