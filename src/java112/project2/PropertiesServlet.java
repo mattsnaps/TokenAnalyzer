@@ -32,6 +32,7 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
             throws ServletException, IOException {
         response.setContentType("text/html");
         // set the response type before sending data
+
         PrintWriter  out  = response.getWriter();
 
         out.print("<HTML>");

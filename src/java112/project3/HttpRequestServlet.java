@@ -29,5 +29,38 @@ public class HttpRequestServlet extends HttpServlet {
 
         HttpRequestData data = new HttpRequestData();
 
+        data.setRemoteComputer(request.getRemoteHost());
+        data.setRemoteComputerAddress(request.getRemoteAddr());
+        data.setHttpMethod(request.getMethod());
+        data.setRequestURI(request.getRequestURI());
+        data.setRequestURL(request.getRequestURL());
+        data.setRequestProtocol(request.getProtocol());
+        data.setServerName(request.getServerName());
+        data.setServerPortNumber(request.getServerPort());
+        data.setServerLocale(request.getLocale());
+        data.setQueryString(request.getQueryString());
+        data.setQueryParameter(request.getParameter("queryParameter"));
+        data.setUserAgent(request.getHeader("User-Agent"));
+
+
+        request.setAttribute("rc", data.getRemoteComputer());
+        request.setAttribute("addr", data.getRemoteComputerAddress());
+        request.setAttribute("method", data.getHttpMethod());
+        request.setAttribute("uri", data.getRequestURI());
+        request.setAttribute("url", data.getRequestURL());
+        request.setAttribute("protocol", data.getRequestProtocol());
+        request.setAttribute("servername", data.getServerName());
+        request.setAttribute("serverport", data.getServerPortNumber());
+        request.setAttribute("locale", data.getServerLocale());
+        request.setAttribute("querystring", data.getQueryString());
+        request.setAttribute("parameter", data.getQueryParameter());
+        request.setAttribute("useragent", data.getUserAgent());
+
+
+        String url = "/httpRequestData.jsp";
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
+
     }
 }

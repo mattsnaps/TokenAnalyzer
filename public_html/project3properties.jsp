@@ -10,24 +10,18 @@
         <div id="posts">
             <div class="post">
                 <h2 class="title">
-                HTTP Request Data JSP Page
+                Project 3 Properties
                 </h2>
                 <h3 class="posted">
                 For Java112
                 </h3>
 
-                <p>Remote computer: ${rc}</p>
-                <p>Remote Address: ${addr}</p>
-                <p>HTTP method: ${method}</p>
-                <p>Request URI: ${uri}</p>
-                <p>Request URL: ${url}</p>
-                <p>Request Protocol: ${protocol}</p>
-                <p>Server Name: ${servername}</p>
-                <p>Server Port: ${serverport}</P>
-                <p>Server Locale: ${locale}</p>
-                <p>Query String: ${querystring}</p>
-                <p>Query Parameter: ${parameter}</p>
-                <p>User-Agent: ${useragent}</p>
+                <p>Author: ${author}</p>
+                <p>Email: ${email}</p>
+                <p>Course Name: ${coursename}</p>
+                <p>Metting Place: ${coursemeeeting}</p>
+                <p>Instructor: ${instructorname}</p>
+                <p>Description: ${desc}</p>
 
             </div>
         </div>
