@@ -21,7 +21,13 @@
     <a href="http://localhost:8080/java112/teamLab?id=300">http://localhost:8080/java112/teamLab?id=300</a><br><br>
     <a href="http://localhost:8080/java112/teamLab?id=400">http://localhost:8080/java112/teamLab?id=400</a><br><br>
 
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <img src="images/diagram.jpg" alt="image" style="width:800px;height:600px">
+    <br>
     <a href="/java112/">Home</a>
     </div>
 
