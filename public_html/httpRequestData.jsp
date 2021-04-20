@@ -16,18 +16,18 @@
                 For Java112
                 </h3>
 
-                <p>Remote computer: ${rc}</p>
-                <p>Remote Address: ${addr}</p>
-                <p>HTTP method: ${method}</p>
-                <p>Request URI: ${uri}</p>
-                <p>Request URL: ${url}</p>
-                <p>Request Protocol: ${protocol}</p>
-                <p>Server Name: ${servername}</p>
-                <p>Server Port: ${serverport}</P>
-                <p>Server Locale: ${locale}</p>
-                <p>Query String: ${querystring}</p>
-                <p>Query Parameter: ${parameter}</p>
-                <p>User-Agent: ${useragent}</p>
+                <p>Remote computer: ${data.remoteComputer}</p>
+                <p>Remote Address: ${data.remoteComputerAddress}</p>
+                <p>HTTP method: ${data.httpMethod}</p>
+                <p>Request URI: ${data.requestURI}</p>
+                <p>Request URL: ${data.requestURL}</p>
+                <p>Request Protocol: ${data.requestProtocol}</p>
+                <p>Server Name: ${data.serverName}</p>
+                <p>Server Port: ${data.serverPortNumber}</P>
+                <p>Server Locale: ${data.serverLocale}</p>
+                <p>Query String: ${data.queryString}</p>
+                <p>Query Parameter: ${data.queryParameter}</p>
+                <p>User-Agent: ${data.userAgent}</p>
 
             </div>
         </div>

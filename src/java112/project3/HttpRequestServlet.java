@@ -42,20 +42,7 @@ public class HttpRequestServlet extends HttpServlet {
         data.setQueryParameter(request.getParameter("queryParameter"));
         data.setUserAgent(request.getHeader("User-Agent"));
 
-
-        request.setAttribute("rc", data.getRemoteComputer());
-        request.setAttribute("addr", data.getRemoteComputerAddress());
-        request.setAttribute("method", data.getHttpMethod());
-        request.setAttribute("uri", data.getRequestURI());
-        request.setAttribute("url", data.getRequestURL());
-        request.setAttribute("protocol", data.getRequestProtocol());
-        request.setAttribute("servername", data.getServerName());
-        request.setAttribute("serverport", data.getServerPortNumber());
-        request.setAttribute("locale", data.getServerLocale());
-        request.setAttribute("querystring", data.getQueryString());
-        request.setAttribute("parameter", data.getQueryParameter());
-        request.setAttribute("useragent", data.getUserAgent());
-
+        request.setAttribute("data", data);
 
         String url = "/httpRequestData.jsp";
 

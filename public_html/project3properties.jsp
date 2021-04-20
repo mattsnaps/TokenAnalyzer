@@ -16,12 +16,12 @@
                 For Java112
                 </h3>
 
-                <p>Author: ${author}</p>
-                <p>Email: ${email}</p>
-                <p>Course Name: ${coursename}</p>
-                <p>Metting Place: ${coursemeeeting}</p>
-                <p>Instructor: ${instructorname}</p>
-                <p>Description: ${desc}</p>
+                <p>Author: ${map["author"]}</p>
+                <p>Email: ${map["email"]}</p>
+                <p>Course Name: ${map["coursename"]}</p>
+                <p>Metting Place: ${map["coursemeeting"]}</p>
+                <p>Instructor: ${map["instructorname"]}</p>
+                <p>Description: ${map["desc"]}</p>
 
             </div>
         </div>

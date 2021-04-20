@@ -4,7 +4,8 @@ import java.io.*;
 import java112.utilities.*;
 
 /**
- *
+ *number of times a token with a certain number of character shows up in file.
+ *Output file uses number and histgram to display results.
  *@author mbpriebe
  */
 public class TokenLengthsAnalyzer implements TokenAnalyzer {
@@ -13,15 +14,15 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
     private Properties properties;
 
     /**
-     * [TokenLengthsAnalyzer description]
+     * Constructor Class
      */
     public TokenLengthsAnalyzer() {
         tokenLengths = new TreeMap<Integer, Integer>();
     }
 
     /**
-     * [TokenLengthsAnalyzer description]
-     * @param properties [description]
+     * Constructor class add properties file.
+     * @param properties properties file.
      */
     public TokenLengthsAnalyzer(Properties properties) {
         this();
@@ -29,16 +30,17 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [getTokenLengths description]
-     * @return [description]
+     * get method for tests.
+     * @return tokenLengths
      */
     public Map<Integer, Integer> getTokenLengths() {
         return tokenLengths;
     }
 
     /**
-     * [processToken description]
-     * @param token [description]
+     * Process Token. Sees how many instances of a character length there are.
+     * puts results in a map.
+     * @param token word.
      */
     public void processToken(String token) {
 
@@ -62,6 +64,10 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
 
     }
 
+    /**
+     * This just does some math SO I can create a histogram later.
+     * @return returns a ratio used for histogram.
+     */
     public double histogram() {
         double largestValue = 0;
         double ratio;
@@ -79,8 +85,8 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [generateOutputFile description]
-     * @param inputFilePath [description]
+     * generates the output file type.
+     * @param inputFilePath path of file coming in.
      */
      public void generateOutputFile(String inputFilePath) {
          double ratio;
@@ -100,6 +106,7 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
 
 
              for (Map.Entry<Integer, Integer> entry: tokenLengths.entrySet()) {
+
                  int repeatTimes = (int) Math.round(ratio * entry.getValue());
 
                  writer.println(entry.getKey() + " " + astrick.repeat(repeatTimes));

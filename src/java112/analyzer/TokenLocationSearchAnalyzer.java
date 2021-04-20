@@ -4,7 +4,8 @@ import java.io.*;
 import java112.utilities.*;
 
 /**
- *
+ *This class searches the token file and generates a file that lists the
+ *location of the found tokens.,
  * @author mbpriebe
  */
 public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
@@ -13,7 +14,7 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     private int currentTokenLocation;
 
     /**
-     * [TokenLocationSearchAnalyzer description]
+     * Constructor Class.
      */
     public TokenLocationSearchAnalyzer() {
         foundLocations = new TreeMap<String, List<Integer>>();
@@ -21,8 +22,8 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [TokenLocationSearchAnalyzer description]
-     * @param properties [description]
+     * Constructor class
+     * @param properties properties file.
      */
     public TokenLocationSearchAnalyzer(Properties properties) {
         this();
@@ -31,15 +32,15 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [getFoundLocations description]
-     * @return [description]
+     * get for testing purposes.
+     * @return foundlocations.
      */
     public Map<String, List<Integer>> getFoundLocations() {
         return foundLocations;
     }
 
     /**
-     * [readSearchTokens description]
+     * gets the search token file and passes it to readSearch tokens method.
      */
     public void searchTokensFile() {
         String searchTokenFile = properties.getProperty("classpath.search.tokens");
@@ -59,8 +60,9 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [readSearchTokens description]
-     * @param searchTokenReader [description]
+     * reads the search token list and addes it to the MAP.
+     * @param input words we are going to search for.
+     * @throws IOException IO exception
      */
     public void readSearchTokens(BufferedReader input) throws IOException {
 
@@ -80,14 +82,16 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [processToken description]
-     * @param token [description]
+     * adds the token location to the list.
+     * @param token token.
      */
      public void processToken(String token) {
          for (Map.Entry<String, List<Integer>> entry : foundLocations.entrySet()) {
              if (token.equals(entry.getKey())) {
 
-                entry.getValue().add(currentTokenLocation);
+                List<Integer> list = entry.getValue();
+
+                list.add(currentTokenLocation);
             }
         }
 
@@ -95,10 +99,12 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
     }
 
     /**
-     * [generateOutputFile description]
-     * @param inputFilePath [description]
+     * Generates the output file and also formats it to specifications.
+     * @param inputFilePath Where the file is coming from.
      */
     public void generateOutputFile(String inputFilePath) {
+        int firstRun = 0;
+
 
         String outputFilePath = properties.getProperty("output.directory") +
                 properties.getProperty("output.file.token.search.locations");
@@ -106,11 +112,58 @@ public class TokenLocationSearchAnalyzer implements TokenAnalyzer {
         try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outputFilePath)))) {
             //writer.println(distinctTokens.size());
             for (Map.Entry<String, List<Integer>> entry : foundLocations.entrySet()) {
-                String key = entry.getKey() + " =";
-                List<Integer> list = entry.getValue();
 
-                writer.println(key);
-                writer.println(list);
+                String key = entry.getKey();
+
+                List<Integer> list = entry.getValue();
+                int counter = 0;
+
+
+                int last;
+                int first;
+
+                if (firstRun == 0) {
+                    writer.println(key + " =");
+                    firstRun++;
+                } else {
+                    writer.print("\n\n");
+                    writer.println(key + " =");
+                }
+
+
+                if (!list.isEmpty()) {
+                    last = list.get(list.size() - 1);
+                    first = list.get(0);
+                } else {
+                    last = -1;
+                    first = -1;
+                    writer.print("[]");
+                }
+
+
+                for (int location : list) {
+
+                    counter = counter + Integer.toString(location).length() + 2;
+
+                    if (counter > 79 && location != first) {
+                        counter = 0;
+                    }
+                    if (location == first) {
+                        writer.print("[" + location + ", ");
+                    }
+
+                    if (counter == 0 && location != first) {
+                        writer.println(location);
+                    }
+
+                    if ((counter > 0) && (location != first) && (location != last)) {
+                        writer.print(location + ", ");
+                    }
+
+                    if (location == last) {
+                        writer.print(location + "]");
+                    }
+                }
             }
         } catch (IOException iOException) {
             System.out.println("Write Largest Token File Error...");

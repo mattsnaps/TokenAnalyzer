@@ -24,7 +24,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of remoteComputer
-	* @return
+	* @return remote computer name
 	*/
 	public String getRemoteComputer() {
 		return remoteComputer;
@@ -33,7 +33,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of remoteComputer
-	* @param
+	* @param remoteComputer comuter name
 	*/
 	public void setRemoteComputer(String remoteComputer) {
 		this.remoteComputer = remoteComputer;
@@ -41,7 +41,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of remoteComputerAddress
-	* @return
+	* @return remote computer address
 	*/
 	public String getRemoteComputerAddress() {
 		return remoteComputerAddress;
@@ -49,7 +49,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of remoteComputerAddress
-	* @param
+	* @param remoteComputerAddress computer address
 	*/
 	public void setRemoteComputerAddress(String remoteComputerAddress) {
 		this.remoteComputerAddress = remoteComputerAddress;
@@ -57,7 +57,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of httpMethod
-	* @return
+	* @return http method
 	*/
 	public String getHttpMethod() {
 		return httpMethod;
@@ -65,7 +65,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of httpMethod
-	* @param
+	* @param httpMethod http method
 	*/
 	public void setHttpMethod(String httpMethod) {
 		this.httpMethod = httpMethod;
@@ -73,7 +73,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of requestURI
-	* @return
+	* @return requestURI
 	*/
 	public String getRequestURI() {
 		return requestURI;
@@ -81,7 +81,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of requestURI
-	* @param
+	* @param requestURI URI
 	*/
 	public void setRequestURI(String requestURI) {
 		this.requestURI = requestURI;
@@ -89,7 +89,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of requestURL
-	* @return
+	* @return Request URL
 	*/
 	public StringBuffer getRequestURL() {
 		return requestURL;
@@ -97,7 +97,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of requestURL
-	* @param
+	* @param requestURL URL
 	*/
 	public void setRequestURL(StringBuffer requestURL) {
 		this.requestURL = requestURL;
@@ -105,7 +105,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of requestProtocol
-	* @return
+	* @return request protocol
 	*/
 	public String getRequestProtocol() {
 		return requestProtocol;
@@ -113,7 +113,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of requestProtocol
-	* @param
+	* @param requestProtocol reques tProtocol
 	*/
 	public void setRequestProtocol(String requestProtocol) {
 		this.requestProtocol = requestProtocol;
@@ -121,7 +121,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of serverName
-	* @return
+	* @return Server Name
 	*/
 	public String getServerName() {
 		return serverName;
@@ -129,7 +129,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of serverName
-	* @param
+	* @param serverName server name
 	*/
 	public void setServerName(String serverName) {
 		this.serverName = serverName;
@@ -137,7 +137,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of serverPortNumber
-	* @return
+	* @return server port number
 	*/
 	public int getServerPortNumber() {
 		return serverPortNumber;
@@ -145,7 +145,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of serverPortNumber
-	* @param
+	* @param serverPortNumber port number
 	*/
 	public void setServerPortNumber(int serverPortNumber) {
 		this.serverPortNumber = serverPortNumber;
@@ -153,7 +153,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of serverLocale
-	* @return
+	* @return server locale
 	*/
 	public Locale getServerLocale() {
 		return serverLocale;
@@ -161,7 +161,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of serverLocale
-	* @param
+	* @param serverLocale locale
 	*/
 	public void setServerLocale(Locale serverLocale) {
 		this.serverLocale = serverLocale;
@@ -169,7 +169,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of queryString
-	* @return
+	* @return queryString
 	*/
 	public String getQueryString() {
 		return queryString;
@@ -177,7 +177,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of queryString
-	* @param
+	* @param queryString String
 	*/
 	public void setQueryString(String queryString) {
 		this.queryString = queryString;
@@ -185,7 +185,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of queryParameter
-	* @return
+	* @return query parameter
 	*/
 	public String getQueryParameter() {
 		return queryParameter;
@@ -193,7 +193,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of queryParameter
-	* @param
+	* @param queryParameter parameter
 	*/
 	public void setQueryParameter(String queryParameter) {
 		this.queryParameter = queryParameter;
@@ -201,7 +201,7 @@ public class HttpRequestData {
 
 	/**
 	* Returns value of userAgent
-	* @return
+	* @return userAgent
 	*/
 	public String getUserAgent() {
 		return userAgent;
@@ -209,7 +209,7 @@ public class HttpRequestData {
 
 	/**
 	* Sets new value of userAgent
-	* @param
+	* @param userAgent user Agent
 	*/
 	public void setUserAgent(String userAgent) {
 		this.userAgent = userAgent;

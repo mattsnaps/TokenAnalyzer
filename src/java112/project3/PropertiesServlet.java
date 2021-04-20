@@ -29,12 +29,16 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        request.setAttribute("author", properties.getProperty("author"));
-        request.setAttribute("email", properties.getProperty("email"));
-        request.setAttribute("coursename", properties.getProperty("course.name"));
-        request.setAttribute("coursemeeeting", properties.getProperty("course.meeting"));
-        request.setAttribute("instructorname", properties.getProperty("instructor.name"));
-        request.setAttribute("desc", properties.getProperty("description"));
+        Map map = new HashMap();
+
+        map.put("author", properties.getProperty("author"));
+        map.put("email", properties.getProperty("email"));
+        map.put("coursename", properties.getProperty("course.name"));
+        map.put("coursemeeeting", properties.getProperty("course.meeting"));
+        map.put("instructorname", properties.getProperty("instructor.name"));
+        map.put("desc", properties.getProperty("description"));
+
+        request.setAttribute("map", map);
 
 
 
@@ -44,7 +48,10 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
         dispatcher.forward(request, response);
 
     }
-
+    /**
+     * initial load up the properties value
+     * @exception ServletException exception for the init method.
+     */
     public void init() throws ServletException {
 
         properties = new Properties();
