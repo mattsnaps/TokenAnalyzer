@@ -18,10 +18,10 @@
 
                 <p>Author: ${map["author"]}</p>
                 <p>Email: ${map["email"]}</p>
-                <p>Course Name: ${map["coursename"]}</p>
-                <p>Metting Place: ${map["coursemeeting"]}</p>
-                <p>Instructor: ${map["instructorname"]}</p>
-                <p>Description: ${map["desc"]}</p>
+                <p>Course Name: ${map["course.name"]}</p>
+                <p>Metting Place: ${map["course.meeting"]}</p>
+                <p>Instructor: ${map["instructor.name"]}</p>
+                <p>Description: ${map["description"]}</p>
 
             </div>
         </div>

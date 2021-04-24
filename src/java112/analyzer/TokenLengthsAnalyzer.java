@@ -72,12 +72,7 @@ public class TokenLengthsAnalyzer implements TokenAnalyzer {
         double largestValue = 0;
         double ratio;
 
-        for (Map.Entry<Integer, Integer> entry: tokenLengths.entrySet()) {
-            if (largestValue < entry.getValue()) {
-
-                largestValue = entry.getValue();
-            }
-        }
+        largestValue = Collections.max(tokenLengths.values());
 
         ratio = 80 / largestValue;
 

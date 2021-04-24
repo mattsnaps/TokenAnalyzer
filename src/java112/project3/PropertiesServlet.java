@@ -29,16 +29,8 @@ public class PropertiesServlet extends HttpServlet implements PropertiesLoader {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Map map = new HashMap();
 
-        map.put("author", properties.getProperty("author"));
-        map.put("email", properties.getProperty("email"));
-        map.put("coursename", properties.getProperty("course.name"));
-        map.put("coursemeeeting", properties.getProperty("course.meeting"));
-        map.put("instructorname", properties.getProperty("instructor.name"));
-        map.put("desc", properties.getProperty("description"));
-
-        request.setAttribute("map", map);
+        request.setAttribute("map", properties);
 
 
 
