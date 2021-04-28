@@ -4,18 +4,28 @@ import java.io.*;
 import java.sql.*;
 
 public class JDBCInsertEmployee {
-    public void runSample() {
+    public void runSample(String[] arg) {
+
+        if (arg.length != 6) {
+
+            for (String item : arg) {
+                System.out.println(item);
+            }
+
+            System.out.println("Please enter 6 arguments on the command line");
+            return;
+        }
 
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
 
-        String f_Name = "Tom";
-        String l_Name = "Billson";
-        String ssn = "433-22-3321";
-        String dept = "Gym";
-        String room = "103";
-        String phone = "555-5422";
+        String f_Name = arg[0];
+        String l_Name = arg[1];
+        String ssn = arg[2];
+        String dept = arg[3];
+        String room = arg[4];
+        String phone = arg[5];
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,16 +36,23 @@ public class JDBCInsertEmployee {
             statement = connection.createStatement();
 
             //String name = "Smith";
-            String queryString = String.format("INSERT INTO employees"
-                    + "(first_name, last_name, ssn, dept, room, phone)"
-                    + "VALUES (%s, %s, %s, %s, %s, %s);"
+            String queryString = String.format("INSERT INTO employees "
+                    + "(emp_id, first_name, last_name, ssn, dept, room, phone)"
+                    + " VALUES (null, '%s', '%s', '%s', '%s', '%s', '%s');"
                     , f_Name, l_Name, ssn, dept, room, phone);
 
-            System.out.println("queryString: " + queryString);
+            System.out.println("\nqueryString: " + queryString + "\n\n");
+
+            int rowsAffected = statement.executeUpdate(queryString);
+
+            System.out.println("Rows updated: " + rowsAffected);
+
+            queryString = String.format("SELECT * FROM employees WHERE "
+                    + "first_name = '%s' AND last_name = '%s';", f_Name, l_Name);
+
+            System.out.println("\nqueryString: " + queryString + "\n\n");
 
             resultSet = statement.executeQuery(queryString);
-
-            System.out.println();
 
             while (resultSet.next()) {
                 String employeeId = resultSet.getString("emp_id");
@@ -47,17 +64,17 @@ public class JDBCInsertEmployee {
 
             System.out.println();
 
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            int columns = resultSetMetaData.getColumnCount();
-            String nameOne = resultSetMetaData.getColumnName(1);
-            String typeOne = resultSetMetaData.getColumnTypeName(1);
-            String labelOne = resultSetMetaData.getColumnLabel(1);
-            System.out.println(" Column count : " + columns);
-            System.out.println(" Column 1 name : " + nameOne);
-            System.out.println(" Column 1 type : " + typeOne);
-            System.out.println(" Column 1 label name : " + labelOne);
+            //ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+            //int columns = resultSetMetaData.getColumnCount();
+            //String nameOne = resultSetMetaData.getColumnName(1);
+            //String typeOne = resultSetMetaData.getColumnTypeName(1);
+            //String labelOne = resultSetMetaData.getColumnLabel(1);
+            //System.out.println(" Column count : " + columns);
+            //System.out.println(" Column 1 name : " + nameOne);
+            //System.out.println(" Column 1 type : " + typeOne);
+            //System.out.println(" Column 1 label name : " + labelOne);
 
-            System.out.println();
+            //System.out.println();
 
         } catch (ClassNotFoundException classNotFound) {
             classNotFound.printStackTrace();
@@ -97,9 +114,10 @@ public class JDBCInsertEmployee {
      */
     public static void main(String[] args) {
 
-        JDBCSelectEmployees employees = new JDBCSelectEmployees();
 
-        employees.runSample();
+        JDBCInsertEmployee employees = new JDBCInsertEmployee();
+
+        employees.runSample(args);
 
     }
 }
