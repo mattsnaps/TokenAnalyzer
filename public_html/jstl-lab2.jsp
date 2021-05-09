@@ -14,7 +14,7 @@
 
     <table>
         <c:forEach var="item" items="${myCoolList}">
-            <br><tr><tc>${item}</tc></tr>
+            <br><tgit r><tc>${item}</tc></tr>
         </c:forEach>
     </table>
 
