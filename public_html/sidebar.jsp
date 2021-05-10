@@ -28,6 +28,20 @@
     </div>
 
     <h2 class="heading">
+        Project 4 Links
+    </h2>
+    <div class="content">
+        <ul>
+            <li>
+                <a href="/java112/employee-search">Employees Search</a>
+            </li>
+            <li>
+                <a href="/java112/">Different Page</a>
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="heading">
         Lab 3 Links
     </h2>
 
