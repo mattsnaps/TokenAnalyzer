@@ -64,18 +64,6 @@ public class JDBCInsertEmployee {
 
             System.out.println();
 
-            //ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            //int columns = resultSetMetaData.getColumnCount();
-            //String nameOne = resultSetMetaData.getColumnName(1);
-            //String typeOne = resultSetMetaData.getColumnTypeName(1);
-            //String labelOne = resultSetMetaData.getColumnLabel(1);
-            //System.out.println(" Column count : " + columns);
-            //System.out.println(" Column 1 name : " + nameOne);
-            //System.out.println(" Column 1 type : " + typeOne);
-            //System.out.println(" Column 1 label name : " + labelOne);
-
-            //System.out.println();
-
         } catch (ClassNotFoundException classNotFound) {
             classNotFound.printStackTrace();
         } catch (SQLException sqlException) {
