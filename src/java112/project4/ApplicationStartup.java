@@ -1,10 +1,12 @@
 package java112.project4;
 
 import java.io.*;
-import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java112.utilities.*;
+import java112.employee.*;
+import java.util.*;
 
 /**
  *  This is a simple servlet to show html output
@@ -16,20 +18,28 @@ import javax.servlet.annotation.*;
     urlPatterns = { "/project4-startup" },
     loadOnStartup = 1
 )
-public class Lab5Servlet extends HttpServlet {
+public class ApplicationStartup extends HttpServlet implements PropertiesLoader {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * [init description]
+     * @param  request          [description]
+     * @param  response         [description]
+     * @throws ServletException [description]
+     * @throws IOException      [description]
+     */
+    public void init(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    }
-
-    public void init() throws ServletException {
         Properties properties = new Properties();
 
         properties = loadProperties("/project4.properties");
 
         request.setAttribute("project4Properties", properties);
 
-        
+        EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
 
+        String url = "/name.jsp";
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
     }
 }

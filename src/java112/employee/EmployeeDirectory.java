@@ -14,7 +14,6 @@ public class EmployeeDirectory {
      * Constructor class
      */
     public EmployeeDirectory() {
-
     }
 
     /**
