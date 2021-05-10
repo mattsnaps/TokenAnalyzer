@@ -13,21 +13,13 @@
         <div id="posts">
             <div class="post">
                 <h2 class="title">
-                Employee Search
+                Employee Search Results
                 </h2>
                 <h3 class="posted">
                 For Java112
                 </h3>
             </div>
-            <form method="GET" action="/java112/search-results">
-                <input type="text" name="searchTerm"><br>
-                <input type="radio" id="fName" value="firstName" name="searchType">
-                    <label for="fName">First Name</label>
-                <input type="radio" id="lName"value="lastName" name="searchType">
-                    <label for="lName">Last Name</label>
-                <input type="radio" id="eId" value="id" name="searchType">
-                    <label for="eId">Employee Id</label><br>
-                <input type="submit" value="Search">
+            <p>Results?</p>
             </form>
         </div>
     </div>

@@ -33,7 +33,6 @@ public class MvcTeamLab extends HttpServlet {
 
         FillOrder pizzaOrder = new FillOrder();
 
-
         Pizza pizza;
         Order order;
 

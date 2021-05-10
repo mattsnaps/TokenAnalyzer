@@ -86,7 +86,6 @@ public class EmployeeDirectory {
 
 
     public void search(String searchTerm, String searchType) {
-        //what do i do here?
     }
 
     /**
@@ -122,7 +121,9 @@ public class EmployeeDirectory {
                     employee.setPhoneNumber(result.getString("phone"));
 
                     search.addFoundEmployee(employee);
+
                 }
+
             } else {
                 search.setResponse(false);
             }

@@ -5,6 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.util.*;
+import java112.employee.*;
 
 /**
  * @author Matthew Priebe
@@ -25,6 +26,16 @@ public class SearchResultServlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        //EmployeeDirectory search = new EmployeeDirectory();
+
+        String term = request.getParameter("searchTerm");
+        String type = request.getParameter("searchType");
+
+        log("Search Term:" + term);
+        log("Search Type: " + type);
+
+        //search.search(term, type);
 
         String url = "/project4-search-results.jsp";
 

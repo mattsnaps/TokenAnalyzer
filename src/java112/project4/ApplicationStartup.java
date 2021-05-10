@@ -37,6 +37,8 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
 
         EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
 
+        request.setAttribute("employeeDirectory", employeeDirectory);
+
         String url = "/name.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
