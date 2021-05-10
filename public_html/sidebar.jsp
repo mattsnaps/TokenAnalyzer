@@ -36,7 +36,7 @@
                 <a href="/java112/employee-search">Employees Search</a>
             </li>
             <li>
-                <a href="/java112/">Different Page</a>
+                <a href="/java112/employee-add">Add Employee</a>
             </li>
         </ul>
     </div>

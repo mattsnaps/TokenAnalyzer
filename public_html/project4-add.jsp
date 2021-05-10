@@ -19,14 +19,13 @@
                 For Java112
                 </h3>
             </div>
-            <form method="GET" action="/java112/search-results" autocomplete="off">
-                <input type="text" name="searchTerm"><br>
-                <input type="radio" id="fName" value="first_name" name="searchType">
-                    <label for="fName">First Name</label>
-                <input type="radio" id="lName"value="last_name" name="searchType">
-                    <label for="lName">Last Name</label>
-                <input type="radio" id="eId" value="emp_id" name="searchType">
-                    <label for="eId">Employee Id</label><br>
+            <form method="POST" action="/java112/" autocomplete="off">
+                <input type="text" name="first_name" placeholder="First Name"><br>
+                <input type="text" name="last_name" placeholder="LastName"><br>
+                <input type="text" name="ssn" placeholder="ssn"><br>
+                <input type="text" name="dept" placeholder="Department"><br>
+                <input type="text" name="room" placeholder="Room Number"><br>
+                <input type="text" name="phone" placeholder="Phone Number"><br>
                 <input type="submit" value="Search">
             </form>
         </div>

@@ -85,7 +85,8 @@ public class EmployeeDirectory {
     }
 
 
-    public void search(String searchTerm, String searchType) {
+    public String search(String searchTerm, String searchType) {
+        return searchType;
     }
 
     /**
@@ -119,6 +120,8 @@ public class EmployeeDirectory {
                     employee.setDepartment(result.getString("dept"));
                     employee.setRoomNumber(result.getString("room"));
                     employee.setPhoneNumber(result.getString("phone"));
+
+                    System.out.println(employee.toString());
 
                     search.addFoundEmployee(employee);
 

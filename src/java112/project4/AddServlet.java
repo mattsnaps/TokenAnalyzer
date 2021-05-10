@@ -5,17 +5,16 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.util.*;
-import java112.employee.*;
 
 /**
  * @author Matthew Priebe
  *
  */
 @WebServlet(
-    name = "searchResultServlet",
-    urlPatterns = { "/search-results" }
+    name = "addServlet",
+    urlPatterns = { "/employee-add" }
 )
-public class SearchResultServlet extends HttpServlet {
+public class AddServlet extends HttpServlet {
     /**
      *  Handles HTTP GET requests.
      *
@@ -27,19 +26,7 @@ public class SearchResultServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        EmployeeDirectory search = new EmployeeDirectory();
-
-        String term = request.getParameter("searchTerm");
-        String type = request.getParameter("searchType");
-
-        log("Search Term:" + term);
-        log("Search Type: " + type);
-
-        String ret = search.search(term, type);
-
-        log(ret);
-
-        String url = "/project4-search-results.jsp";
+        String url = "/project4-add.jsp";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
