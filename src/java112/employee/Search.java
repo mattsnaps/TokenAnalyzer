@@ -8,7 +8,7 @@ import java.util.*;
 public class Search {
     private String searchType;
     private String searchTerm;
-    private ArrayList<String> results;
+    private ArrayList<Employee> results;
     private Boolean response;
 
     /**
@@ -16,7 +16,7 @@ public class Search {
      *
      */
     public Search() {
-
+        results = new ArrayList<Employee>();
     }
 
     /**
@@ -55,7 +55,7 @@ public class Search {
 	* Returns value of results
 	* @return
 	*/
-	public ArrayList<String> getResults() {
+	public ArrayList<Employee> getResults() {
 		return results;
 	}
 
@@ -63,7 +63,7 @@ public class Search {
 	* Sets new value of results
 	* @param
 	*/
-	public void setResults(ArrayList<String> results) {
+	public void setResults(ArrayList<Employee> results) {
 		this.results = results;
 	}
 
@@ -88,7 +88,7 @@ public class Search {
      * @param employee [description]
      */
     public void addFoundEmployee(Employee employee) {
-
+        results.add(employee);
     }
 
 }

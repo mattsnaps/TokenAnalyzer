@@ -53,34 +53,31 @@ public class EmployeeDirectory {
 
     /**
      * [insertEmployee description]
-     * @param id          [description]
-     * @param firstName   [description]
-     * @param lastName    [description]
-     * @param ssn         [description]
-     * @param department  [description]
-     * @param roomNumber  [description]
-     * @param phoneNumber [description]
+     *
      */
-    public void insertEmployee(String id, String firstName, String lastName,
-            String ssn, String department, String roomNumber, String phoneNumber) {
+    public void insertEmployee() {
 
         Connection con = createConnection();
+
+        Employee employee = new Employee();
 
         String insertString = "Insert INTO employees (emp_id, first_name, last_name, "
                 + "ssn, dept, room, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (PreparedStatement insertEmployee = con.prepareStatement(insertString)) {
 
-            insertEmployee.setString(1, id);
-            insertEmployee.setString(2, firstName);
-            insertEmployee.setString(3, lastName);
-            insertEmployee.setString(4, ssn);
-            insertEmployee.setString(5, department);
-            insertEmployee.setString(6, roomNumber);
-            insertEmployee.setString(7, phoneNumber);
+            insertEmployee.setString(1, employee.getEmployeeId());
+            insertEmployee.setString(2, employee.getFirstName());
+            insertEmployee.setString(3, employee.getLastName());
+            insertEmployee.setString(4, employee.getSsn());
+            insertEmployee.setString(5, employee.getDepartment());
+            insertEmployee.setString(6, employee.getRoomNumber());
+            insertEmployee.setString(7, employee.getPhoneNumber());
 
             insertEmployee.executeUpdate();
 
+            insertEmployee.close();
+            con.close();
 
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
@@ -89,9 +86,55 @@ public class EmployeeDirectory {
     }
 
 
-    public Search search() {
-
-
+    public void search(String searchTerm, String searchType) {
+        //what do i do here?
     }
 
+    /**
+     * [searchDatabase description]
+     * @param searchTerm [description]
+     * @param searchType [description]
+     */
+    private void searchDatabase(String searchTerm, String searchType) {
+        Search search = new Search();
+        Connection con =createConnection();
+
+        String selectString = "SELECT * FROM employees WHERE ? LIKE '?'";
+
+        try(PreparedStatement selectStatement = con.prepareStatement(selectString)) {
+
+            selectStatement.setString(1, searchType);
+            selectStatement.setString(2, searchTerm);
+
+            ResultSet result = selectStatement.executeQuery();
+
+            if (result != null) {
+                search.setResponse(true);
+
+                Employee employee = new Employee();
+
+                while (result.next()) {
+                    employee.setEmployeeId(result.getString("emp_id"));
+                    employee.setFirstName(result.getString("first_name"));
+                    employee.setLastName(result.getString("last_name"));
+                    employee.setSsn(result.getString("ssn"));
+                    employee.setDepartment(result.getString("dept"));
+                    employee.setRoomNumber(result.getString("room"));
+                    employee.setPhoneNumber(result.getString("phone"));
+
+                    search.addFoundEmployee(employee);
+                }
+            } else {
+                search.setResponse(false);
+            }
+
+            result.close();
+            selectStatement.close();
+            con.close();
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            System.out.println("Select Statement error");
+        }
+    }
 }
