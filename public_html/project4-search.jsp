@@ -21,7 +21,7 @@
             </div>
             <form method="GET" action="/java112/search-results" autocomplete="off">
                 <input type="text" name="searchTerm"><br>
-                <input type="radio" id="fName" value="first_name" name="searchType">
+                <input type="radio" id="fName" value="first_name" name="searchType" required>
                     <label for="fName">First Name</label>
                 <input type="radio" id="lName"value="last_name" name="searchType">
                     <label for="lName">Last Name</label>

@@ -29,7 +29,7 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
      */
     public void init(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-            
+
         Properties properties = new Properties();
 
         properties = loadProperties("/project4.properties");
@@ -37,7 +37,6 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
         EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
 
 
-        ServletContext context = getServletContext();
-        context.setAttribute("test", "test");
+        request.setAttribute("test", "test");
     }
 }

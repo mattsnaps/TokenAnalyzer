@@ -19,10 +19,35 @@
                 For Java112
                 </h3>
             </div>
+
+            <c:if test="${!search}">
+                <c:out value="No Results found"/>
+            </c:if>
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Social Security Number</th>
+                    <th>Department</th>
+                    <th>Room Number</th>
+                    <th>Phone Number</th>
+                </tr>
+            </table>
+
             <c:forEach var="item" items="${list}">
-                <br><tr><tc>${item}</tc></tr>
+                <table class="table">
+                <tr>
+                    <td scope="col">${item.firstName}</td>
+                    <td scope="col">${item.lastName}</td>
+                    <td scope="col">${item.ssn}</tc>
+                    <td scope="col">${item.department}</td>
+                    <td scope="col">${item.roomNumber}</td>
+                    <td scope="col">${item.phoneNumber}</td>
+                </tr>
+            </table>
             </c:forEach>
-            </form>
+
+            <br><br><br><a href="/java112/employee-search">Return to Search</a>
         </div>
     </div>
 

@@ -123,6 +123,10 @@ public class EmployeeDirectory {
         Search search = new Search();
         Employee employee;
 
+
+
+        search.setResponse(false);
+
         try {
             con = createConnection();
 
@@ -131,7 +135,8 @@ public class EmployeeDirectory {
             System.out.println(statement);
             result = statement.executeQuery();
 
-            if (result != null) {
+            if (result.isBeforeFirst()) {
+
                 search.setResponse(true);
 
                 while (result.next()) {
@@ -148,8 +153,6 @@ public class EmployeeDirectory {
 
                     search.addFoundEmployee(employee);
                 }
-            } else {
-                search.setResponse(false);
             }
 
         } catch (SQLException sqlException) {

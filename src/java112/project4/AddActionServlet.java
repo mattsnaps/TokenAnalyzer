@@ -47,7 +47,7 @@ public class AddActionServlet extends HttpServlet {
         log(room);
         log(phone);
 
-        String url = "/java112/project4-confirm.jsp";
+        String url = "/java112/project4-add.jsp";
 
         response.sendRedirect(url);
 

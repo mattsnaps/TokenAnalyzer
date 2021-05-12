@@ -20,12 +20,12 @@
                 </h3>
             </div>
             <form method="POST" action="/java112/add-action-servlet" autocomplete="off">
-                <input type="text" name="first_name" placeholder="First Name"><br>
-                <input type="text" name="last_name" placeholder="Last Name"><br>
-                <input type="text" name="ssn" placeholder="ssn"><br>
-                <input type="text" name="dept" placeholder="Department"><br>
-                <input type="text" name="room" placeholder="Room Number"><br>
-                <input type="text" name="phone" placeholder="Phone Number"><br>
+                <input type="text" name="first_name" placeholder="First Name" maxlength="25" required><br>
+                <input type="text" name="last_name" placeholder="Last Name" maxlength="30" required><br>
+                <input type="text" name="ssn" placeholder="ssn" maxlength="20" required><br>
+                <input type="text" name="dept" placeholder="Department" maxlength="10" required><br>
+                <input type="text" name="room" placeholder="Room Number" maxlength="10" required><br>
+                <input type="text" name="phone" placeholder="Phone Number" maxlength="10" required><br>
                 <input type="submit" value="Search">
             </form>
         </div>

@@ -1,4 +1,11 @@
 <div id="sidebar" class="boxed">
+    <br>
+        <br>
+            <br>
+                <br>
+                    <br>
+                        <br>
+                            <br>
     <h2 class="heading">
         Project 2 Links
     </h2>

@@ -71,7 +71,7 @@ public class Search {
 	* Returns value of response
 	* @return
 	*/
-	public Boolean getResponse() {
+	public Boolean isResponse() {
 		return response;
 	}
 
