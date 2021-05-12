@@ -27,6 +27,8 @@ public class AddActionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        EmployeeDirectory insert = new EmployeeDirectory();
+
         String first_name = request.getParameter("first_name");
         String last_name = request.getParameter("last_name");
         String ssn = request.getParameter("ssn");
@@ -34,6 +36,9 @@ public class AddActionServlet extends HttpServlet {
         String room = request.getParameter("room");
         String phone = request.getParameter("phone");
 
+        int rowsUpdated = insert.insertEmployee(first_name, last_name, ssn, dept, room, phone);
+
+        request.setAttribute("rows", rowsUpdated);
 
         log(first_name);
         log(last_name);
@@ -42,7 +47,7 @@ public class AddActionServlet extends HttpServlet {
         log(room);
         log(phone);
 
-        String url = "/java112/employee-add";
+        String url = "/java112/project4-confirm.jsp";
 
         response.sendRedirect(url);
 

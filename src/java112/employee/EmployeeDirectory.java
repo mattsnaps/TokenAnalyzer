@@ -55,34 +55,46 @@ public class EmployeeDirectory {
      * [insertEmployee description]
      *
      */
-    public void insertEmployee() {
+    public int insertEmployee(String first_name, String last_name, String ssn, String dept, String room, String phone) {
 
-        Connection con = createConnection();
+        System.out.println("Hello Sir" + first_name);
 
-        Employee employee = new Employee();
+        Connection con = null;
+        PreparedStatement insertEmployee = null;
+        int rowsUpdated = 0;
 
-        String insertString = "Insert INTO employees (emp_id, first_name, last_name, "
-                + "ssn, dept, room, phone) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try {
 
-        try (PreparedStatement insertEmployee = con.prepareStatement(insertString)) {
+            con = createConnection();
 
-            insertEmployee.setString(1, employee.getEmployeeId());
-            insertEmployee.setString(2, employee.getFirstName());
-            insertEmployee.setString(3, employee.getLastName());
-            insertEmployee.setString(4, employee.getSsn());
-            insertEmployee.setString(5, employee.getDepartment());
-            insertEmployee.setString(6, employee.getRoomNumber());
-            insertEmployee.setString(7, employee.getPhoneNumber());
+            String insertString = "Insert INTO employees (first_name, last_name, ssn, dept, room, phone) VALUES (?, ?, ?, ?, ?, ?)";
 
-            insertEmployee.executeUpdate();
+            insertEmployee = con.prepareStatement(insertString);
+
+            insertEmployee.setString(1, first_name);
+            insertEmployee.setString(2, last_name);
+            insertEmployee.setString(3, ssn);
+            insertEmployee.setString(4, dept);
+            insertEmployee.setString(5, room);
+            insertEmployee.setString(6, phone);
+
+            System.out.println(insertEmployee);
+
+            rowsUpdated = insertEmployee.executeUpdate();
 
             insertEmployee.close();
             con.close();
 
+            return rowsUpdated;
+
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
             System.out.println("Failed to execute query");
+        } catch (Exception exception) {
+            exception.printStackTrace();
         }
+
+        return rowsUpdated;
     }
 
 
@@ -110,7 +122,7 @@ public class EmployeeDirectory {
         try {
             con = createConnection();
 
-            String selectString = "SELECT * FROM employees WHERE first_name LIKE '?'";
+            String selectString = "SELECT * FROM employees WHERE first_name LIKE ?";
 
             statement = con.prepareStatement(selectString);
 

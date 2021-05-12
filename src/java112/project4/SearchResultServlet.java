@@ -34,7 +34,13 @@ public class SearchResultServlet extends HttpServlet {
         log("Search Type: " + type);
 
         EmployeeDirectory search = new EmployeeDirectory();
-        search.search(term, type);
+        Search results = search.search(term, type);
+
+        ArrayList<Employee> list = new ArrayList<Employee>();
+
+        list = results.getResults();
+
+        request.setAttribute("list", list);
 
         String url = "/project4-search-results.jsp";
 

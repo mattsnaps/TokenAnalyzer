@@ -13,16 +13,13 @@
         <div id="posts">
             <div class="post">
                 <h2 class="title">
-                Employee Search Results
+                Employee Search
                 </h2>
                 <h3 class="posted">
                 For Java112
                 </h3>
             </div>
-            <c:forEach var="item" items="${list}">
-                <br><tr><tc>${item}</tc></tr>
-            </c:forEach>
-            </form>
+                <p>Employees Add: ${rows}</p>
         </div>
     </div>
 
