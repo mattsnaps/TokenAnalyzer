@@ -99,43 +99,45 @@ public class EmployeeDirectory {
 
 
     public Search search(String searchTerm, String searchType) {
+        Search search;
 
-        Search search = searchDatabase(searchTerm, searchType);
+        if (searchType.equals("emp_id")) {
+            String selectString = "SELECT * FROM employees WHERE emp_id LIKE ?";
+            search = databaseSearch(searchTerm, selectString);
+        } else if (searchType.equals("first_name")) {
+            String selectString = "SELECT * FROM employees WHERE first_name LIKE ?";
+            search = databaseSearch(searchTerm, selectString);
+        } else {
+            String selectString = "SELECT * FROM employees WHERE last_name LIKE ?";
+            search = databaseSearch(searchTerm, selectString);
+        }
 
         return search;
     }
 
-    /**
-     * [searchDatabase description]
-     * @param searchTerm [description]
-     * @param searchType [description]
-     */
-    private Search searchDatabase(String searchTerm, String searchType) {
-
-        Search search = new Search();
-        Employee employee = new Employee();
-
+    private Search databaseSearch(String searchTerm, String selectString) {
         ResultSet result = null;
         PreparedStatement statement = null;
         Connection con = null;
 
+        Search search = new Search();
+        Employee employee;
+
         try {
             con = createConnection();
 
-            String selectString = "SELECT * FROM employees WHERE first_name LIKE ?";
-
             statement = con.prepareStatement(selectString);
-
-            //selectStatement.setString(1, searchType);
-
             statement.setString(1, searchTerm);
-
+            System.out.println(statement);
             result = statement.executeQuery();
 
             if (result != null) {
                 search.setResponse(true);
 
                 while (result.next()) {
+
+                    employee = new Employee();
+
                     employee.setEmployeeId(result.getString("emp_id"));
                     employee.setFirstName(result.getString("first_name"));
                     employee.setLastName(result.getString("last_name"));
@@ -149,12 +151,11 @@ public class EmployeeDirectory {
             } else {
                 search.setResponse(false);
             }
+
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            //log("sqlException in searchdatabase()");
         } catch (Exception exception) {
-            exception.printStackTrace();
-            //log("Some exception error in searchDatabase()");
+        exception.printStackTrace();
         } finally {
             try {
                 if (result != null) {
@@ -176,6 +177,7 @@ public class EmployeeDirectory {
                 //log("Error in exception finally block");
             }
         }
+
         return search;
     }
 }
