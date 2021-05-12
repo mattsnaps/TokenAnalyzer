@@ -28,6 +28,9 @@ public class AddServlet extends HttpServlet {
 
         String url = "/project4-add.jsp";
 
+        HttpSession session = request.getSession();
+        session.removeAttribute("message");
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 

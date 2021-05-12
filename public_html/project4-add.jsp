@@ -26,8 +26,13 @@
                 <input type="text" name="dept" placeholder="Department" maxlength="10" required><br>
                 <input type="text" name="room" placeholder="Room Number" maxlength="10" required><br>
                 <input type="text" name="phone" placeholder="Phone Number" maxlength="10" required><br>
-                <input type="submit" value="Search">
+                <input type="submit" value="Enter">
             </form>
+            
+            <c:set var="session_name" value="${message}" scope="request" />
+
+            <p>${session_name}</p>
+
         </div>
     </div>
 

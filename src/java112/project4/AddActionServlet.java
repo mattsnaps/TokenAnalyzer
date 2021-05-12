@@ -29,6 +29,8 @@ public class AddActionServlet extends HttpServlet {
 
         EmployeeDirectory insert = new EmployeeDirectory();
 
+        int rowsUpdated = 0;
+
         String first_name = request.getParameter("first_name");
         String last_name = request.getParameter("last_name");
         String ssn = request.getParameter("ssn");
@@ -36,16 +38,12 @@ public class AddActionServlet extends HttpServlet {
         String room = request.getParameter("room");
         String phone = request.getParameter("phone");
 
-        int rowsUpdated = insert.insertEmployee(first_name, last_name, ssn, dept, room, phone);
+        rowsUpdated = insert.insertEmployee(first_name, last_name, ssn, dept, room, phone);
+
+        HttpSession session = request.getSession();
+        session.setAttribute("message", "Success! Employee Added");
 
         request.setAttribute("rows", rowsUpdated);
-
-        log(first_name);
-        log(last_name);
-        log(ssn);
-        log(dept);
-        log(room);
-        log(phone);
 
         String url = "/java112/project4-add.jsp";
 
