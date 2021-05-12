@@ -19,9 +19,9 @@
                 For Java112
                 </h3>
             </div>
-            <form method="POST" action="/java112/" autocomplete="off">
+            <form method="POST" action="/java112/add-action-servlet" autocomplete="off">
                 <input type="text" name="first_name" placeholder="First Name"><br>
-                <input type="text" name="last_name" placeholder="LastName"><br>
+                <input type="text" name="last_name" placeholder="Last Name"><br>
                 <input type="text" name="ssn" placeholder="ssn"><br>
                 <input type="text" name="dept" placeholder="Department"><br>
                 <input type="text" name="room" placeholder="Room Number"><br>

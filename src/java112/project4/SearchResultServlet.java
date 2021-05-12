@@ -27,17 +27,14 @@ public class SearchResultServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        EmployeeDirectory search = new EmployeeDirectory();
-
         String term = request.getParameter("searchTerm");
         String type = request.getParameter("searchType");
 
         log("Search Term:" + term);
         log("Search Type: " + type);
 
-        String ret = search.search(term, type);
-
-        log(ret);
+        EmployeeDirectory search = new EmployeeDirectory();
+        search.search(term, type);
 
         String url = "/project4-search-results.jsp";
 

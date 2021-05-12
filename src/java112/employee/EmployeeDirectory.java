@@ -2,6 +2,7 @@ package java112.employee;
 
 import java.util.*;
 import java.sql.*;
+
 /**
  * @author mbpriebe
  *
@@ -85,8 +86,11 @@ public class EmployeeDirectory {
     }
 
 
-    public String search(String searchTerm, String searchType) {
-        return searchType;
+    public Search search(String searchTerm, String searchType) {
+
+        Search search = searchDatabase(searchTerm, searchType);
+
+        return search;
     }
 
     /**
@@ -94,23 +98,30 @@ public class EmployeeDirectory {
      * @param searchTerm [description]
      * @param searchType [description]
      */
-    private void searchDatabase(String searchTerm, String searchType) {
+    private Search searchDatabase(String searchTerm, String searchType) {
+
         Search search = new Search();
-        Connection con =createConnection();
+        Employee employee = new Employee();
 
-        String selectString = "SELECT * FROM employees WHERE ? LIKE '?'";
+        ResultSet result = null;
+        PreparedStatement statement = null;
+        Connection con = null;
 
-        try(PreparedStatement selectStatement = con.prepareStatement(selectString)) {
+        try {
+            con = createConnection();
 
-            selectStatement.setString(1, searchType);
-            selectStatement.setString(2, searchTerm);
+            String selectString = "SELECT * FROM employees WHERE first_name LIKE '?'";
 
-            ResultSet result = selectStatement.executeQuery();
+            statement = con.prepareStatement(selectString);
+
+            //selectStatement.setString(1, searchType);
+
+            statement.setString(1, searchTerm);
+
+            result = statement.executeQuery();
 
             if (result != null) {
                 search.setResponse(true);
-
-                Employee employee = new Employee();
 
                 while (result.next()) {
                     employee.setEmployeeId(result.getString("emp_id"));
@@ -121,23 +132,38 @@ public class EmployeeDirectory {
                     employee.setRoomNumber(result.getString("room"));
                     employee.setPhoneNumber(result.getString("phone"));
 
-                    System.out.println(employee.toString());
-
                     search.addFoundEmployee(employee);
-
                 }
-
             } else {
                 search.setResponse(false);
             }
-
-            result.close();
-            selectStatement.close();
-            con.close();
-
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            System.out.println("Select Statement error");
+            //log("sqlException in searchdatabase()");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            //log("Some exception error in searchDatabase()");
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+
+                if (statement != null) {
+                    statement.close();
+                }
+
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException sqlException) {
+                sqlException.printStackTrace();
+                //log("sql error in finally block");
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                //log("Error in exception finally block");
+            }
         }
+        return search;
     }
 }

@@ -29,19 +29,15 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
      */
     public void init(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+            
         Properties properties = new Properties();
 
         properties = loadProperties("/project4.properties");
-
         request.setAttribute("project4Properties", properties);
-
         EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
 
-        request.setAttribute("employeeDirectory", employeeDirectory);
 
-        String url = "/name.jsp";
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        ServletContext context = getServletContext();
+        context.setAttribute("test", "test");
     }
 }
