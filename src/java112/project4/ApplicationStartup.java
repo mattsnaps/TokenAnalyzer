@@ -27,16 +27,21 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
      * @throws ServletException if there is a Servlet failure
      * @throws IOException       if there is an IO failure
      */
-    public void init(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+    public void init(ServletConfig config)
+        throws ServletException {
 
-        Properties properties = new Properties();
+        EmployeeDirectory search = new EmployeeDirectory();
 
-        properties = loadProperties("/project4.properties");
-        request.setAttribute("project4Properties", properties);
-        EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
+        ServletContext ctx = config.getServletContext();
+        ctx.setAttribute("employeeDirectory", search);
 
 
-        request.setAttribute("test", "test");
+
+        //Properties properties = new Properties();
+
+        //properties = loadProperties("/project4.properties");
+        //request.setAttribute("project4Properties", properties);
+        //EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
+
     }
 }

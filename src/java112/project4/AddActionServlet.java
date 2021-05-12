@@ -27,7 +27,8 @@ public class AddActionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        EmployeeDirectory insert = new EmployeeDirectory();
+        ServletContext ctx = request.getServletContext();
+        EmployeeDirectory insert = (EmployeeDirectory) ctx.getAttribute("employeeDirectory");
 
         int rowsUpdated = 0;
 

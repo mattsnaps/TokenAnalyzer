@@ -27,17 +27,13 @@ public class SearchResultServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
         String term = request.getParameter("searchTerm");
         String type = request.getParameter("searchType");
 
-        log("Search Term:" + term);
-        log("Search Type: " + type);
+        ServletContext ctx = request.getServletContext();
+        EmployeeDirectory search = (EmployeeDirectory) ctx.getAttribute("employeeDirectory");
 
-        //String test = (String) request.getAttribute("test");
-
-        //log(test);
-
-        EmployeeDirectory search = new EmployeeDirectory();
         Search results = search.search(term, type);
 
         ArrayList<Employee> list = new ArrayList<Employee>();
