@@ -30,17 +30,18 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
     public void init(ServletConfig config)
         throws ServletException {
 
-        EmployeeDirectory search = new EmployeeDirectory();
-
         ServletContext ctx = config.getServletContext();
+
+        Properties properties = new Properties();
+        properties = loadProperties("/project4.properties");
+        ctx.setAttribute("project4Properties", properties);
+
+
+        EmployeeDirectory search = new EmployeeDirectory(properties);
+
         ctx.setAttribute("employeeDirectory", search);
 
 
-
-        //Properties properties = new Properties();
-
-        //properties = loadProperties("/project4.properties");
-        //request.setAttribute("project4Properties", properties);
         //EmployeeDirectory employeeDirectory = new EmployeeDirectory(properties);
 
     }
