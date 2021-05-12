@@ -11,7 +11,7 @@ import java.util.*;
 /**
  *  This is a simple servlet to show html output
  *
- *@author    eknapp
+ *@author    mbpriebe
  */
 @WebServlet (
     name = "applicationStartup",
@@ -21,11 +21,11 @@ import java.util.*;
 public class ApplicationStartup extends HttpServlet implements PropertiesLoader {
 
     /**
-     * [init description]
-     * @param  request          [description]
-     * @param  response         [description]
-     * @throws ServletException [description]
-     * @throws IOException      [description]
+     * Initializes when application starts.
+     * @param  request          the HttpServletRequest object
+     * @param  response         the HttpServletResponse object
+     * @throws ServletException if there is a Servlet failure
+     * @throws IOException       if there is an IO failure
      */
     public void init(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {

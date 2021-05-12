@@ -1,6 +1,7 @@
 package java112.employee;
 /**
- * @author mbpriebe
+ *Represents and Employee.
+ *  @author mbpriebe
  *
  */
 
@@ -15,7 +16,7 @@ public class Employee {
 
     /**
 	* Returns value of employeeId
-	* @return
+	* @return employeeId
 	*/
 	public String getEmployeeId() {
 		return employeeId;
@@ -23,7 +24,7 @@ public class Employee {
 
 	/**
 	* Sets new value of employeeId
-	* @param
+	* @param employeeId Id of employee
 	*/
 	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
@@ -31,7 +32,7 @@ public class Employee {
 
 	/**
 	* Returns value of firstName
-	* @return
+	* @return firstName
 	*/
 	public String getFirstName() {
 		return firstName;
@@ -39,7 +40,7 @@ public class Employee {
 
 	/**
 	* Sets new value of firstName
-	* @param
+	* @param firstName first Name
 	*/
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -47,7 +48,7 @@ public class Employee {
 
 	/**
 	* Returns value of lastName
-	* @return
+	* @return lastName last Name
 	*/
 	public String getLastName() {
 		return lastName;
@@ -55,7 +56,7 @@ public class Employee {
 
 	/**
 	* Sets new value of lastName
-	* @param
+	* @param lastName last Name
 	*/
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -63,7 +64,7 @@ public class Employee {
 
 	/**
 	* Returns value of ssn
-	* @return
+	* @return ssn
 	*/
 	public String getSsn() {
 		return ssn;
@@ -71,7 +72,7 @@ public class Employee {
 
 	/**
 	* Sets new value of ssn
-	* @param
+	* @param ssn Social Security number
 	*/
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
@@ -79,7 +80,7 @@ public class Employee {
 
 	/**
 	* Returns value of department
-	* @return
+	* @return department
 	*/
 	public String getDepartment() {
 		return department;
@@ -87,7 +88,7 @@ public class Employee {
 
 	/**
 	* Sets new value of department
-	* @param
+	* @param department department name
 	*/
 	public void setDepartment(String department) {
 		this.department = department;
@@ -95,7 +96,7 @@ public class Employee {
 
 	/**
 	* Returns value of roomNumber
-	* @return
+	* @return roomNumber
 	*/
 	public String getRoomNumber() {
 		return roomNumber;
@@ -103,7 +104,7 @@ public class Employee {
 
 	/**
 	* Sets new value of roomNumber
-	* @param
+	* @param roomNumber room number
 	*/
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
@@ -111,7 +112,7 @@ public class Employee {
 
 	/**
 	* Returns value of phoneNumber
-	* @return
+	* @return phoneNumber
 	*/
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -119,7 +120,7 @@ public class Employee {
 
 	/**
 	* Sets new value of phoneNumber
-	* @param
+	* @param phoneNumber phone number
 	*/
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
@@ -127,7 +128,7 @@ public class Employee {
 
     /**
 	* Create string representation of Employee for printing
-	* @return
+	* @return String of Employee.
 	*/
 	@Override
 	public String toString() {

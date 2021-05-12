@@ -4,6 +4,7 @@ import java.util.*;
 import java.sql.*;
 
 /**
+ * Insert and look up employees.
  * @author mbpriebe
  *
  */
@@ -27,8 +28,8 @@ public class EmployeeDirectory {
     }
 
     /**
-     * [createConnection description]
-     * @return [description]
+     * creates a connection to database.
+     * @return connection
      */
     private Connection createConnection() {
         Connection connection = null;
@@ -52,8 +53,14 @@ public class EmployeeDirectory {
     }
 
     /**
-     * [insertEmployee description]
-     *
+     * Inserts a employee into database.
+     * @param  first_name first Name
+     * @param  last_name  last Name
+     * @param  ssn        ssn
+     * @param  dept       department
+     * @param  room       room
+     * @param  phone      phone
+     * @return search object
      */
     public int insertEmployee(String first_name, String last_name, String ssn, String dept, String room, String phone) {
 
@@ -97,7 +104,12 @@ public class EmployeeDirectory {
         return rowsUpdated;
     }
 
-
+    /**
+     *determines search type and creates a string.
+     * @param  searchTerm search term
+     * @param  searchType searchtype
+     * @return  search object
+     */
     public Search search(String searchTerm, String searchType) {
         Search search;
 
@@ -115,6 +127,12 @@ public class EmployeeDirectory {
         return search;
     }
 
+    /**
+     * performs the database search.
+     * @param  searchTerm   term to search for
+     * @param  selectString SQL string
+     * @return search object
+     */
     private Search databaseSearch(String searchTerm, String selectString) {
         ResultSet result = null;
         PreparedStatement statement = null;
@@ -122,8 +140,6 @@ public class EmployeeDirectory {
 
         Search search = new Search();
         Employee employee;
-
-
 
         search.setResponse(false);
 

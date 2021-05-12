@@ -1,6 +1,7 @@
 package java112.employee;
 import java.util.*;
 /**
+ * Represents a search for employee info.
  * @author mbpriebe
  *
  */
@@ -21,7 +22,7 @@ public class Search {
 
     /**
 	* Returns value of searchType
-	* @return
+	* @return searchType
 	*/
 	public String getSearchType() {
 		return searchType;
@@ -29,7 +30,7 @@ public class Search {
 
 	/**
 	* Sets new value of searchType
-	* @param
+	* @param searchType type of search
 	*/
 	public void setSearchType(String searchType) {
 		this.searchType = searchType;
@@ -37,7 +38,7 @@ public class Search {
 
 	/**
 	* Returns value of searchTerm
-	* @return
+	* @return searchTerm
 	*/
 	public String getSearchTerm() {
 		return searchTerm;
@@ -45,7 +46,7 @@ public class Search {
 
 	/**
 	* Sets new value of searchTerm
-	* @param
+	* @param searchTerm term search for
 	*/
 	public void setSearchTerm(String searchTerm) {
 		this.searchTerm = searchTerm;
@@ -53,7 +54,7 @@ public class Search {
 
 	/**
 	* Returns value of results
-	* @return
+	* @return results
 	*/
 	public ArrayList<Employee> getResults() {
 		return results;
@@ -61,7 +62,7 @@ public class Search {
 
 	/**
 	* Sets new value of results
-	* @param
+	* @param results results in resultSet
 	*/
 	public void setResults(ArrayList<Employee> results) {
 		this.results = results;
@@ -69,7 +70,7 @@ public class Search {
 
 	/**
 	* Returns value of response
-	* @return
+	* @return response
 	*/
 	public Boolean isResponse() {
 		return response;
@@ -77,15 +78,15 @@ public class Search {
 
 	/**
 	* Sets new value of response
-	* @param
+	* @param response are there any results tru/false
 	*/
 	public void setResponse(Boolean response) {
 		this.response = response;
 	}
 
     /**
-     * [addFoundEmployee description]
-     * @param employee [description]
+     * Add employee to an Arraylist.
+     * @param employee employee info
      */
     public void addFoundEmployee(Employee employee) {
         results.add(employee);
